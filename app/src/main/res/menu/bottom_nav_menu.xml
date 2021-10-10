@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navLists"
+        android:title="Lists"
+        android:icon="@drawable/ic_lists" />
+
+    <item
+        android:id="@+id/navBudget"
+        android:title="Budget"
+        android:icon="@drawable/ic_budget" />
+
+    <item
+        android:id="@+id/navStats"
+        android:title="Stats"
+        android:icon="@drawable/ic_stats" />
+
+</menu>
