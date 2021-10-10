@@ -8,7 +8,9 @@
         <entry key="..\:/Users/TutoTOONS/AndroidStudioProjects/ShopList/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.22135416666666666" />
         <entry key="..\:/Users/TutoTOONS/AndroidStudioProjects/ShopList/app/src/main/res/drawable/ic_lists.xml" value="0.36875" />
         <entry key="..\:/Users/TutoTOONS/AndroidStudioProjects/ShopList/app/src/main/res/layout-w936dp/layout_edit_list.xml" value="0.25" />
+        <entry key="..\:/Users/TutoTOONS/AndroidStudioProjects/ShopList/app/src/main/res/layout/activity_list.xml" value="0.22" />
         <entry key="..\:/Users/TutoTOONS/AndroidStudioProjects/ShopList/app/src/main/res/layout/activity_main.xml" value="0.35260416666666666" />
+        <entry key="..\:/Users/TutoTOONS/AndroidStudioProjects/ShopList/app/src/main/res/layout/activity_product.xml" value="0.19114583333333332" />
         <entry key="..\:/Users/TutoTOONS/AndroidStudioProjects/ShopList/app/src/main/res/layout/activity_products.xml" value="0.35260416666666666" />
         <entry key="..\:/Users/TutoTOONS/AndroidStudioProjects/ShopList/app/src/main/res/layout/content_scrolling.xml" value="0.20520833333333333" />
         <entry key="..\:/Users/TutoTOONS/AndroidStudioProjects/ShopList/app/src/main/res/layout/fragment_budget.xml" value="0.20520833333333333" />
@@ -16,6 +18,7 @@
         <entry key="..\:/Users/TutoTOONS/AndroidStudioProjects/ShopList/app/src/main/res/layout/fragment_products.xml" value="0.20520833333333333" />
         <entry key="..\:/Users/TutoTOONS/AndroidStudioProjects/ShopList/app/src/main/res/layout/fragment_shopping_list.xml" value="0.2916666666666667" />
         <entry key="..\:/Users/TutoTOONS/AndroidStudioProjects/ShopList/app/src/main/res/layout/fragment_stats.xml" value="0.20520833333333333" />
+        <entry key="..\:/Users/TutoTOONS/AndroidStudioProjects/ShopList/app/src/main/res/layout/item_product.xml" value="0.33" />
         <entry key="..\:/Users/TutoTOONS/AndroidStudioProjects/ShopList/app/src/main/res/layout/item_shopping_list.xml" value="0.2916666666666667" />
         <entry key="..\:/Users/TutoTOONS/AndroidStudioProjects/ShopList/app/src/main/res/layout/layout_edit_list.xml" value="0.2916666666666667" />
         <entry key="..\:/Users/TutoTOONS/AndroidStudioProjects/ShopList/app/src/main/res/layout/layout_new_list.xml" value="0.2916666666666667" />

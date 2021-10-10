@@ -10,71 +10,74 @@ import android.widget.PopupMenu;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.RecyclerView;
+
 import java.util.List;
 
-public class ShoppingListAdapter extends RecyclerView.Adapter<ShoppingListAdapter.ShoppingListViewHolder>{
+public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.ProductListViewHolder> {
 
-    List<ShoppingList> shoppingList;
-    OnListListener mOnListListener;
+    List<ProductEntry> productList;
+    ProductListAdapter.OnProductListener mOnProductListener;
 
     FragmentManager fragManager;
 
-    public interface OnListListener{
-        void onListClick(int position);
-        void onRenameClick(int position);
+    public interface OnProductListener{
+        void onProductClick(int position);
     }
 
-    public ShoppingListAdapter(List<ShoppingList> shoppingList, OnListListener onListListener)
+    public ProductListAdapter(List<ProductEntry> productList, ProductListAdapter.OnProductListener onProductListener)
     {
         super();
-        this.shoppingList = shoppingList;
-        mOnListListener = onListListener;
+        this.productList = productList;
+        mOnProductListener = onProductListener;
     }
 
-    public static class ShoppingListViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+    public static class ProductListViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         View view;
-        TextView textViewList;
+        CheckBox checkBoxChecked;
+        TextView textViewProduct;
         TextView textViewCount;
-        Button bttnOptions;
+        TextView textViewPrice;
 
-        OnListListener onListListener;
+        ProductListAdapter.OnProductListener onProductListener;
 
-        public ShoppingListViewHolder(@NonNull View itemView, OnListListener onListListener) {
+        public ProductListViewHolder(@NonNull View itemView, ProductListAdapter.OnProductListener onProdctListener) {
             super(itemView);
             view = itemView;
-            textViewList = view.findViewById(R.id.tvList);
-            textViewCount = view.findViewById(R.id.tvListCount);
-            bttnOptions = view.findViewById(R.id.bttnOptions);
-            this.onListListener = onListListener;
+            checkBoxChecked = view.findViewById(R.id.cbChecked);
+            textViewProduct = view.findViewById(R.id.tvProduct);
+            textViewCount = view.findViewById(R.id.tvProductCount);
+            textViewPrice = view.findViewById(R.id.tvProductPrice);
+            this.onProductListener = onProdctListener;
 
             view.setOnClickListener(this);
         }
 
         @Override
         public void onClick(View v) {
-            onListListener.onListClick(getAdapterPosition());
+            onProductListener.onProductClick(getAdapterPosition());
         }
     }
 
     @NonNull
     @Override
-    public ShoppingListViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_shopping_list, parent, false);
-        return new ShoppingListViewHolder(view, mOnListListener);
+    public ProductListAdapter.ProductListViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_product, parent, false);
+        return new ProductListAdapter.ProductListViewHolder(view, mOnProductListener);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ShoppingListViewHolder holder, int position) {
-        ShoppingList list = shoppingList.get(position);
+    public void onBindViewHolder(@NonNull ProductListAdapter.ProductListViewHolder holder, int position) {
+        ProductEntry entry = productList.get(position);
 
-        holder.textViewList.setText(list.title);
-        holder.textViewCount.setText(String.valueOf(list.itemCount));
+        holder.checkBoxChecked.setChecked(entry.isChecked);
+        holder.textViewProduct.setText(entry.product.name);
+        holder.textViewCount.setText(String.valueOf(entry.quantity));
+        holder.textViewPrice.setText(String.valueOf(entry.getCost()));
 
-        holder.bttnOptions.setOnClickListener(new View.OnClickListener() {
+        /*holder.bttnOptions.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
@@ -102,17 +105,17 @@ public class ShoppingListAdapter extends RecyclerView.Adapter<ShoppingListAdapte
                 popup.show();
 
             }
-        });
+        });*/
     }
 
     @Override
     public int getItemCount() {
-        return shoppingList.size();
+        return productList.size();
     }
 
     private void removeListEntry(int position)
     {
-        shoppingList.remove(position);
+        productList.remove(position);
         //refresh view
         notifyItemRemoved(position);
     }
@@ -121,4 +124,5 @@ public class ShoppingListAdapter extends RecyclerView.Adapter<ShoppingListAdapte
     {
         fragManager = manager;
     }
+
 }

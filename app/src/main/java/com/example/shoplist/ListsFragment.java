@@ -1,5 +1,6 @@
 package com.example.shoplist;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -100,6 +101,10 @@ public class ListsFragment extends Fragment implements NewListDialogue.NewListDi
     public void onListClick(int position) {
         //Implement transition to a new activity (where it shows what is in the list)
         Toast.makeText(getContext(),"You clicked on: " + shoppingList.get(position).title, Toast.LENGTH_SHORT).show();
+
+        Intent intent = new Intent(getContext(), ListActivity.class);
+        intent.putExtra("list_object", shoppingList.get(position));
+        startActivity(intent);
     }
 
     @Override
