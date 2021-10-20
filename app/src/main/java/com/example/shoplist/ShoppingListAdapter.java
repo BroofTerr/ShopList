@@ -80,9 +80,7 @@ public class ShoppingListAdapter extends RecyclerView.Adapter<ShoppingListAdapte
 
                 //creating a popup menu
                 PopupMenu popup = new PopupMenu(view.getContext(), holder.bttnOptions);
-                //inflating menu from xml resource
                 popup.inflate(R.menu.list_options_menu);
-                //adding click listener
                 popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
                     @Override
                     public boolean onMenuItemClick(MenuItem item) {
@@ -98,7 +96,6 @@ public class ShoppingListAdapter extends RecyclerView.Adapter<ShoppingListAdapte
                         }
                     }
                 });
-                //displaying the popup
                 popup.show();
 
             }

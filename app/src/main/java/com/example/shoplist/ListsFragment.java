@@ -26,7 +26,9 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
 
-public class ListsFragment extends Fragment implements NewListDialogue.NewListDialogueListener, ShoppingListAdapter.OnListListener, RenameListDialogue.RenameListDialogueListener {
+public class ListsFragment extends Fragment implements NewListDialogue.NewListDialogueListener,
+        ShoppingListAdapter.OnListListener,
+        RenameListDialogue.RenameListDialogueListener {
 
     RecyclerView recyclerView;
     ShoppingListAdapter adapter;
@@ -76,14 +78,14 @@ public class ListsFragment extends Fragment implements NewListDialogue.NewListDi
         switch (item.getItemId())
         {
             case R.id.appBarAddNew:
-                openDialogue();
+                openAddDialogue();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
     }
 
-    public void openDialogue()
+    public void openAddDialogue()
     {
         NewListDialogue newDialogue = new NewListDialogue();
         newDialogue.setTargetFragment(ListsFragment.this, 1);

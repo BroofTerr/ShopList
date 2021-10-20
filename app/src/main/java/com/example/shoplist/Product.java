@@ -2,7 +2,20 @@ package com.example.shoplist;
 
 public class Product {
     String name;
-    //String category;
+    //category;
     float price;
-    //Image image;
+    //Image;
+
+    public Product()
+    {
+        name = "";
+        price = 0f;
+    }
+
+    public Product(String name, float price)
+    {
+        this.name = name;
+        this.price = price;
+    }
 }
+

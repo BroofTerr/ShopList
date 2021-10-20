@@ -20,10 +20,10 @@ public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.
     List<ProductEntry> productList;
     ProductListAdapter.OnProductListener mOnProductListener;
 
-    FragmentManager fragManager;
-
     public interface OnProductListener{
         void onProductClick(int position);
+        void onProductLongClick(int position);
+        void onCheck(int position);
     }
 
     public ProductListAdapter(List<ProductEntry> productList, ProductListAdapter.OnProductListener onProductListener)
@@ -33,7 +33,7 @@ public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.
         mOnProductListener = onProductListener;
     }
 
-    public static class ProductListViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+    public static class ProductListViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener, View.OnLongClickListener {
 
         View view;
         CheckBox checkBoxChecked;
@@ -43,21 +43,28 @@ public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.
 
         ProductListAdapter.OnProductListener onProductListener;
 
-        public ProductListViewHolder(@NonNull View itemView, ProductListAdapter.OnProductListener onProdctListener) {
+        public ProductListViewHolder(@NonNull View itemView, ProductListAdapter.OnProductListener onProductListener) {
             super(itemView);
             view = itemView;
             checkBoxChecked = view.findViewById(R.id.cbChecked);
             textViewProduct = view.findViewById(R.id.tvProduct);
             textViewCount = view.findViewById(R.id.tvProductCount);
             textViewPrice = view.findViewById(R.id.tvProductPrice);
-            this.onProductListener = onProdctListener;
+            this.onProductListener = onProductListener;
 
             view.setOnClickListener(this);
+            view.setOnLongClickListener(this);
         }
 
         @Override
         public void onClick(View v) {
             onProductListener.onProductClick(getAdapterPosition());
+        }
+
+        @Override
+        public boolean onLongClick(View v) {
+            onProductListener.onProductLongClick(getAdapterPosition());
+            return true;
         }
     }
 
@@ -77,35 +84,14 @@ public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.
         holder.textViewCount.setText(String.valueOf(entry.quantity));
         holder.textViewPrice.setText(String.valueOf(entry.getCost()));
 
-        /*holder.bttnOptions.setOnClickListener(new View.OnClickListener() {
+        holder.checkBoxChecked.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(View v) {
 
-                //creating a popup menu
-                PopupMenu popup = new PopupMenu(view.getContext(), holder.bttnOptions);
-                //inflating menu from xml resource
-                popup.inflate(R.menu.list_options_menu);
-                //adding click listener
-                popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
-                    @Override
-                    public boolean onMenuItemClick(MenuItem item) {
-                        switch (item.getItemId()) {
-                            case R.id.optionRename:
-                                mOnListListener.onRenameClick(holder.getAdapterPosition());
-                                return true;
-                            case R.id.optionRemove:
-                                removeListEntry(holder.getAdapterPosition());
-                                return true;
-                            default:
-                                return false;
-                        }
-                    }
-                });
-                //displaying the popup
-                popup.show();
-
+                mOnProductListener.onCheck(holder.getAdapterPosition());
             }
-        });*/
+        });
+
     }
 
     @Override
@@ -120,9 +106,11 @@ public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.
         notifyItemRemoved(position);
     }
 
-    public void setFragmentManager(FragmentManager manager)
+    public void UpdateList(List<ProductEntry> newList)
     {
-        fragManager = manager;
+        productList = newList;
+        notifyDataSetChanged();
+
     }
 
 }

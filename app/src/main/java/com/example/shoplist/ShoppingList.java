@@ -19,6 +19,13 @@ public class ShoppingList implements Parcelable {
         productList = new ArrayList<ProductEntry>();
     }
 
+    public ShoppingList(String title, List<ProductEntry> list)
+    {
+        this.title = title;
+        productList = list;
+        itemCount = list.size();
+    }
+
     protected ShoppingList(Parcel in) {
         title = in.readString();
         itemCount = in.readInt();
@@ -36,6 +43,17 @@ public class ShoppingList implements Parcelable {
         }
     };
 
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(title);
+        dest.writeInt(itemCount);
+    }
+
     public void AddProduct(Product product)
     {
         itemCount++;
@@ -51,14 +69,4 @@ public class ShoppingList implements Parcelable {
 
     }
 
-    @Override
-    public int describeContents() {
-        return 0;
-    }
-
-    @Override
-    public void writeToParcel(Parcel dest, int flags) {
-        dest.writeString(title);
-        dest.writeInt(itemCount);
-    }
 }

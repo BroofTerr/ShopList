@@ -7,16 +7,44 @@
     android:background="@color/gray"
     tools:context=".ListActivity">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarList"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:layout_constraintTop_toTopOf="parent"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:menu="@menu/app_bar_menu"/>
+
+    <EditText
+        android:id="@+id/etSearch"
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        app:layout_constraintEnd_toStartOf="@+id/bttnSearch"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbarList" />
+
+    <Button
+        android:id="@+id/bttnSearch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Filter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbarList" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewProducts"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_margin="5dp"
+        android:background="@color/white"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:background="@color/white"
+        app:layout_constraintTop_toBottomOf="@+id/etSearch"
         app:layout_constraintVertical_bias="0.0" />
 
     <LinearLayout

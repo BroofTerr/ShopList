@@ -10,8 +10,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ShopList">
         <activity
+
+
             android:name=".ListActivity"
-            android:exported="true" />
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:exported="true">
+            <meta-data android:name="android.app.searchable"
+            android:resource="@xml/searchable" />
+        </activity>
         <activity
             android:name=".ProductActivity"
             android:exported="true" />
