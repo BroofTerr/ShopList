@@ -16,6 +16,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
     <TextView
         android:id="@+id/tvProduct"
         android:layout_width="wrap_content"
@@ -62,5 +63,28 @@
         app:layout_constraintEnd_toStartOf="@+id/tvProductCount"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.567" />
+
+    <ImageView
+        android:id="@+id/ProductImageView"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/tvProduct"
+        app:layout_constraintEnd_toEndOf="@+id/tvProduct"
+        app:layout_constraintStart_toStartOf="@+id/tvProduct"
+        app:layout_constraintTop_toTopOf="@+id/tvProduct"
+        app:srcCompat="@drawable/apple" />
+
+    <ImageView
+        android:id="@+id/CategoryImageView"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvCategory"
+        app:layout_constraintEnd_toEndOf="@+id/tvCategory"
+        app:layout_constraintHorizontal_bias="0.382"
+        app:layout_constraintStart_toStartOf="@+id/tvCategory"
+        app:layout_constraintTop_toTopOf="@+id/tvCategory"
+        android:visibility="invisible"
+        app:srcCompat="@drawable/coupe_entree_plate_drk_brn_wht_o_ut" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

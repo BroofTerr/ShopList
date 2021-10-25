@@ -1,5 +1,6 @@
 package com.example.shoplist;
 
+import androidx.annotation.DrawableRes;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -8,12 +9,14 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.SearchManager;
 import android.content.Context;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.SearchView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -36,20 +39,23 @@ public class ListActivity extends AppCompatActivity implements ProductListAdapte
 
     TextView tvTotal;
     TextView tvChecked;
+    TextView productName;
+    ImageView productNameImage;
+    TextView productCategory;
+    ImageView productCategoryImage;
     EditText etSearch;
     Button bttnSearch;
+    Button bttnChange;
+    int count = 0;
 
     boolean isFiltered;
 
     public ListActivity()
     {
         Product p1 = new Product("Apple",3.33f);
-        Product p2 = new Product("Juice", 0.75f);
         ProductEntry e1 = new ProductEntry(p1, "Food", 2, false);
-        ProductEntry e2 = new ProductEntry(p2, "Food", 1, true);
         productList = new ArrayList<>();
         productList.add(e1);
-        productList.add(e2);
 
         adapter = new ProductListAdapter(productList, this);
     }
@@ -80,6 +86,7 @@ public class ListActivity extends AppCompatActivity implements ProductListAdapte
         tvChecked = findViewById(R.id.tvCheckedCost);
         etSearch = findViewById((R.id.etSearch));
         bttnSearch = findViewById(R.id.bttnSearch);
+        bttnChange = findViewById(R.id.bttnChange);
 
         bttnSearch.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -89,6 +96,29 @@ public class ListActivity extends AppCompatActivity implements ProductListAdapte
             }
         });
 
+        bttnChange.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view) {
+                for (ProductEntry e : productList)
+                {
+                    productName = findViewById(R.id.tvProduct);
+                    productNameImage = findViewById(R.id.ProductImageView);
+                    productCategory = findViewById(R.id.tvCategory);
+                    productCategoryImage = findViewById(R.id.CategoryImageView);
+
+                    if (e.category.equals("Food") && e.product.name.equals("Apple"))
+                    {
+                        productName.setVisibility(view.INVISIBLE);
+                        productNameImage.setImageResource(R.drawable.apple);
+                        productNameImage.setVisibility(View.VISIBLE);
+                        productCategory.setVisibility(view.INVISIBLE);
+                        productCategoryImage.setImageResource(R.drawable.coupe_entree_plate_drk_brn_wht_o_ut);
+                        productCategoryImage.setVisibility(view.VISIBLE);
+                    }
+                }
+            }
+        });
         CalculateCosts(productList);
     }
 
