@@ -9,22 +9,21 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.app.SearchManager;
 import android.content.Context;
 import android.os.Bundle;
-import android.speech.tts.TextToSpeech;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.SearchView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ListActivity extends AppCompatActivity implements ProductListAdapter.OnProductListener {
+public class ListActivity extends AppCompatActivity implements ProductListAdapter.OnProductListener,
+        NewProductDialogue.NewProductDialogueListener {
 
     ShoppingList data;
     List<ProductEntry> productList;
@@ -44,10 +43,10 @@ public class ListActivity extends AppCompatActivity implements ProductListAdapte
 
     public ListActivity()
     {
-        Product p1 = new Product("Apple",3f);
+        Product p1 = new Product("Apple",3.33f);
         Product p2 = new Product("Juice", 0.75f);
-        ProductEntry e1 = new ProductEntry(p1, 2, false);
-        ProductEntry e2 = new ProductEntry(p2, 1, true);
+        ProductEntry e1 = new ProductEntry(p1, "Food", 2, false);
+        ProductEntry e2 = new ProductEntry(p2, "Food", 1, true);
         productList = new ArrayList<>();
         productList.add(e1);
         productList.add(e2);
@@ -98,7 +97,7 @@ public class ListActivity extends AppCompatActivity implements ProductListAdapte
         filteredList = new ArrayList<>();
         for (ProductEntry e : productList)
         {
-            if (e.product.name.equals(productFilterName))
+            if (e.product.name.equals(productFilterName) || e.category.equals(productFilterName))
             {
                 filteredList.add(e);
             }
@@ -125,8 +124,9 @@ public class ListActivity extends AppCompatActivity implements ProductListAdapte
             total += e.getCost();
             if (e.isChecked) checked += e.getCost();
         }
-        tvTotal.setText(String.valueOf(total));
-        tvChecked.setText(String.valueOf(checked));
+        DecimalFormat frmt = new DecimalFormat("#.##");
+        tvTotal.setText(frmt.format(total));
+        tvChecked.setText(frmt.format(checked));
     }
 
     @Override
@@ -147,6 +147,9 @@ public class ListActivity extends AppCompatActivity implements ProductListAdapte
         {
             case android.R.id.home:
                 this.finish();
+                return true;
+            case R.id.appBarAddNew:
+                openAddProductDialogue();
                 return true;
         }
         return super.onOptionsItemSelected(item);
@@ -186,6 +189,25 @@ public class ListActivity extends AppCompatActivity implements ProductListAdapte
         {
             checked -= e.getCost();
         }
-        tvChecked.setText(String.valueOf(checked));
+        DecimalFormat frmt = new DecimalFormat("#.##");
+        tvChecked.setText(frmt.format(checked));
     }
+
+    @Override
+    public void applyProduct(String productName, String productCategory, float productPrice, int productQuantity)
+    {
+        Product prod = new Product(productName, productPrice);
+        ProductEntry prodEnt = new ProductEntry(prod, productCategory, productQuantity, false);
+        productList.add(prodEnt);
+        adapter.notifyItemInserted(productList.size() - 1);
+        Toast.makeText(this, "You created a new product: " + productName, Toast.LENGTH_SHORT).show();
+        CalculateCosts(productList);
+    }
+
+    public void openAddProductDialogue()
+    {
+        NewProductDialogue newProdDial = new NewProductDialogue();
+        newProdDial.show(getSupportFragmentManager(), "addNewProduct");
+    }
+
 }

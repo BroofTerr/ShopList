@@ -38,6 +38,7 @@ public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.
         View view;
         CheckBox checkBoxChecked;
         TextView textViewProduct;
+        TextView textViewCategory;
         TextView textViewCount;
         TextView textViewPrice;
 
@@ -48,6 +49,7 @@ public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.
             view = itemView;
             checkBoxChecked = view.findViewById(R.id.cbChecked);
             textViewProduct = view.findViewById(R.id.tvProduct);
+            textViewCategory = view.findViewById(R.id.tvCategory);
             textViewCount = view.findViewById(R.id.tvProductCount);
             textViewPrice = view.findViewById(R.id.tvProductPrice);
             this.onProductListener = onProductListener;
@@ -81,8 +83,9 @@ public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.
 
         holder.checkBoxChecked.setChecked(entry.isChecked);
         holder.textViewProduct.setText(entry.product.name);
+        holder.textViewCategory.setText(entry.category);
         holder.textViewCount.setText(String.valueOf(entry.quantity));
-        holder.textViewPrice.setText(String.valueOf(entry.getCost()));
+        holder.textViewPrice.setText(String.valueOf(entry.product.price));
 
         holder.checkBoxChecked.setOnClickListener(new View.OnClickListener() {
             @Override

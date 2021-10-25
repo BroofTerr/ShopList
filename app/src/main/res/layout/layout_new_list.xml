@@ -8,13 +8,13 @@
         android:id="@+id/tvNewList"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="New list" />
+        android:text="@string/newList" />
 
     <EditText
         android:id="@+id/etNewList"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="List Name"
-        android:layout_below="@+id/tvNewList"/>
+        android:hint="@string/listName"
+        android:layout_below="@+id/tvNewList" />
 
 </RelativeLayout>

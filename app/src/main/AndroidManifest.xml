@@ -10,8 +10,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ShopList">
         <activity
-
-
             android:name=".ListActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:exported="true">

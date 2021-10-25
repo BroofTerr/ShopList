@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">ShopList</string>
+    <string name="total">Total:</string>
+    <string name="checked">Checked:</string>
+    <string name="filter">Filter</string>
+    <string name="budgetFragment">Budget Fragment</string>
+    <string name="statsFragment">Stats Fragment</string>
+    <string name="product">Product</string>
+    <string name="category">Category</string>
+    <string name="list">List</string>
+    <string name="editList">Edit List</string>
+    <string name="listName">List Name</string>
+    <string name="newList">New List</string>
+    <string name="newProduct">New Product</string>
+    <string name="productName">Product Name</string>
+    <string name="newProductQuantity">New Product Quantity</string>
+    <string name="productQuantity">Product Quantity</string>
+    <string name="newProductCategory">New Product Category</string>
+    <string name="productCategory">Product Category</string>
+    <string name="newProductPrice">New Product Price</string>
+    <string name="productPrice">Product Price</string>
+    <string name="action_settings">Settings</string>
+</resources>
+

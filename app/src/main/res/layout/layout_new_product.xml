@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp">
+
+    <TextView
+        android:id="@+id/tvNewProductName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/newProduct"
+        android:textSize="14sp" />
+
+    <EditText
+        android:id="@+id/etNewProductName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvNewProductName"
+        android:hint="@string/productName"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/tvNewProductQuantity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/etNewProductName"
+        android:layout_marginTop="10dp"
+        android:text="@string/newProductQuantity"
+        android:textSize="14sp" />
+
+    <EditText
+        android:id="@+id/etNewProductQuantity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/etNewProductName"
+        android:layout_marginTop="30dp"
+        android:hint="@string/productQuantity"
+        android:inputType="number"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/tvNewProductCategory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/etNewProductQuantity"
+        android:layout_marginTop="10dp"
+        android:text="@string/newProductCategory"
+        android:textSize="14sp" />
+
+    <EditText
+        android:id="@+id/etNewProductCategory"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/etNewProductQuantity"
+        android:layout_marginTop="30dp"
+        android:hint="@string/productCategory"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/tvNewProductPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/etNewProductCategory"
+        android:layout_marginTop="10dp"
+        android:text="@string/newProductPrice"
+        android:textSize="14sp" />
+
+    <EditText
+        android:id="@+id/etNewProductPrice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/etNewProductCategory"
+        android:layout_marginTop="30dp"
+        android:hint="@string/productPrice"
+        android:inputType="numberDecimal"
+        android:textSize="14sp" />
+
+</RelativeLayout>

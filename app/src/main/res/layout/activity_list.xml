@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/gray"
+    android:background="@color/white"
     tools:context=".ListActivity">
 
     <androidx.appcompat.widget.Toolbar
@@ -14,14 +14,18 @@
         android:background="?attr/colorPrimary"
         android:elevation="4dp"
         android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-        app:menu="@menu/app_bar_menu"/>
+        app:menu="@menu/app_bar_menu"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
     <EditText
         android:id="@+id/etSearch"
         android:layout_width="250dp"
         android:layout_height="40dp"
+        android:hint="e.g. Food"
+        android:textSize="16dp"
         app:layout_constraintEnd_toStartOf="@+id/bttnSearch"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -29,9 +33,10 @@
 
     <Button
         android:id="@+id/bttnSearch"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Filter"
+        android:layout_width="91dp"
+        android:layout_height="40dp"
+        android:text="@string/filter"
+        android:textSize="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbarList" />
 
@@ -39,10 +44,11 @@
         android:id="@+id/recyclerViewProducts"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_margin="5dp"
+        android:layout_margin="0dp"
         android:background="@color/white"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etSearch"
         app:layout_constraintVertical_bias="0.0" />
@@ -51,13 +57,14 @@
         android:id="@+id/linearLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:background="@color/white"
+        android:layout_margin="0dp"
+        android:layout_marginBottom="5dp"
+        android:background="@color/purple_200"
         android:gravity="center"
-        android:orientation="horizontal"
         android:padding="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent">
 
         <LinearLayout
@@ -71,13 +78,15 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Total:" />
+                android:text="@string/total"
+                android:textSize="20dp" />
 
             <TextView
                 android:id="@+id/tvTotalCost"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="0" />
+                android:text="0"
+                android:textSize="20dp" />
 
         </LinearLayout>
 
@@ -92,13 +101,15 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Checked:" />
+                android:text="@string/checked"
+                android:textSize="20dp" />
 
             <TextView
                 android:id="@+id/tvCheckedCost"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="0" />
+                android:text="0"
+                android:textSize="20dp" />
 
         </LinearLayout>
 
