@@ -3,26 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Karolis Baranauskas/Desktop/MPKP/ShopList/ShopList/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.3828125" />
-        <entry key="..\:/Users/Karolis Baranauskas/Desktop/MPKP/ShopList/ShopList/app/src/main/res/drawable/ic_search_black_24dp.xml" value="0.3828125" />
-        <entry key="..\:/Users/Karolis Baranauskas/Desktop/MPKP/ShopList/ShopList/app/src/main/res/drawable/juice.xml" value="0.3828125" />
-        <entry key="..\:/Users/Karolis Baranauskas/Desktop/MPKP/ShopList/ShopList/app/src/main/res/layout/activity_list.xml" value="0.2608695652173913" />
-        <entry key="..\:/Users/Karolis Baranauskas/Desktop/MPKP/ShopList/ShopList/app/src/main/res/layout/activity_main.xml" value="0.2608695652173913" />
-        <entry key="..\:/Users/Karolis Baranauskas/Desktop/MPKP/ShopList/ShopList/app/src/main/res/layout/activity_product.xml" value="0.2608695652173913" />
-        <entry key="..\:/Users/Karolis Baranauskas/Desktop/MPKP/ShopList/ShopList/app/src/main/res/layout/fragment_budget.xml" value="0.2608695652173913" />
-        <entry key="..\:/Users/Karolis Baranauskas/Desktop/MPKP/ShopList/ShopList/app/src/main/res/layout/fragment_lists.xml" value="0.2608695652173913" />
-        <entry key="..\:/Users/Karolis Baranauskas/Desktop/MPKP/ShopList/ShopList/app/src/main/res/layout/fragment_stats.xml" value="0.2608695652173913" />
-        <entry key="..\:/Users/Karolis Baranauskas/Desktop/MPKP/ShopList/ShopList/app/src/main/res/layout/item_product.xml" value="0.2608695652173913" />
-        <entry key="..\:/Users/Karolis Baranauskas/Desktop/MPKP/ShopList/ShopList/app/src/main/res/layout/item_shopping_list.xml" value="0.2608695652173913" />
-        <entry key="..\:/Users/Karolis Baranauskas/Desktop/MPKP/ShopList/ShopList/app/src/main/res/layout/layout_edit_list.xml" value="0.2608695652173913" />
-        <entry key="..\:/Users/Karolis Baranauskas/Desktop/MPKP/ShopList/ShopList/app/src/main/res/layout/layout_new_list.xml" value="0.2608695652173913" />
-        <entry key="..\:/Users/Karolis Baranauskas/Desktop/MPKP/ShopList/ShopList/app/src/main/res/layout/layout_new_product.xml" value="0.20520833333333333" />
-        <entry key="..\:/Users/Karolis Baranauskas/Desktop/MPKP/ShopList/ShopList/app/src/main/res/menu/app_bar_menu.xml" value="0.2" />
-        <entry key="..\:/Users/Karolis Baranauskas/Desktop/MPKP/ShopList/ShopList/app/src/main/res/menu/bottom_nav_menu.xml" value="0.20520833333333333" />
-        <entry key="..\:/Users/Karolis Baranauskas/Desktop/MPKP/ShopList/ShopList/app/src/main/res/menu/list_menu.xml" value="0.20520833333333333" />
-        <entry key="..\:/Users/Karolis Baranauskas/Desktop/MPKP/ShopList/ShopList/app/src/main/res/menu/list_options_menu.xml" value="0.20520833333333333" />
-        <entry key="..\:/Users/Karolis Baranauskas/Desktop/MPKP/ShopList/ShopList/app/src/main/res/menu/products_bar_menu.xml" value="0.20520833333333333" />
         <entry key="..\:/Users/TutoTOONS/AndroidStudioProjects/ShopList/app/src/main/res/drawable-anydpi/ic_add.xml" value="0.3828125" />
+        <entry key="..\:/Users/TutoTOONS/AndroidStudioProjects/ShopList/app/src/main/res/drawable-anydpi/ic_back.xml" value="0.22135416666666666" />
         <entry key="..\:/Users/TutoTOONS/AndroidStudioProjects/ShopList/app/src/main/res/drawable-anydpi/ic_lists.xml" value="0.22135416666666666" />
         <entry key="..\:/Users/TutoTOONS/AndroidStudioProjects/ShopList/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.22135416666666666" />
         <entry key="..\:/Users/TutoTOONS/AndroidStudioProjects/ShopList/app/src/main/res/drawable/ic_lists.xml" value="0.36875" />
@@ -51,7 +33,7 @@
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

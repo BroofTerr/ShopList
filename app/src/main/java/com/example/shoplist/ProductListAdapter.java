@@ -83,7 +83,7 @@ public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.
 
         holder.checkBoxChecked.setChecked(entry.isChecked);
         holder.textViewProduct.setText(entry.product.name);
-        holder.textViewCategory.setText(entry.category);
+        holder.textViewCategory.setText(entry.product.category);
         holder.textViewCount.setText(String.valueOf(entry.quantity));
         holder.textViewPrice.setText(String.valueOf(entry.product.price));
 

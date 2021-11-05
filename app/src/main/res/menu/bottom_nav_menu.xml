@@ -3,14 +3,17 @@
 
     <item
         android:id="@+id/navLists"
+        android:icon="@drawable/ic_lists"
         android:title="Lists" />
 
     <item
         android:id="@+id/navBudget"
+        android:icon="@drawable/ic_budget"
         android:title="Budget" />
 
     <item
         android:id="@+id/navStats"
+        android:icon="@drawable/ic_stats"
         android:title="Stats" />
 
 </menu>

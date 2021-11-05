@@ -7,10 +7,13 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.Activity;
 import android.app.SearchManager;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -29,7 +32,7 @@ public class ListActivity extends AppCompatActivity implements ProductListAdapte
         NewProductDialogue.NewProductDialogueListener {
 
     ShoppingList data;
-    List<ProductEntry> productList;
+    //List<ProductEntry> productList;
     List<ProductEntry> filteredList;
 
     RecyclerView recyclerView;
@@ -49,16 +52,7 @@ public class ListActivity extends AppCompatActivity implements ProductListAdapte
     int count = 0;
 
     boolean isFiltered;
-
-    public ListActivity()
-    {
-        Product p1 = new Product("Apple",3.33f);
-        ProductEntry e1 = new ProductEntry(p1, "Food", 2, false);
-        productList = new ArrayList<>();
-        productList.add(e1);
-
-        adapter = new ProductListAdapter(productList, this);
-    }
+    boolean isTextEntry;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,10 +65,11 @@ public class ListActivity extends AppCompatActivity implements ProductListAdapte
 
         data = getIntent().getParcelableExtra("list_object");
 
-        if(data.productList != null && data.productList.size() != 0)
+        /*if(data.productList != null && data.productList.size() != 0)
         {
             productList = data.productList;
-        }
+        }*/
+        adapter = new ProductListAdapter(data.productList, this);
 
         setTitle(data.title);
 
@@ -82,6 +77,7 @@ public class ListActivity extends AppCompatActivity implements ProductListAdapte
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(adapter);
 
+        isTextEntry = true;
         tvTotal = findViewById(R.id.tvTotalCost);
         tvChecked = findViewById(R.id.tvCheckedCost);
         etSearch = findViewById((R.id.etSearch));
@@ -100,34 +96,45 @@ public class ListActivity extends AppCompatActivity implements ProductListAdapte
         {
             @Override
             public void onClick(View view) {
-                for (ProductEntry e : productList)
+                for (ProductEntry e : data.productList)
                 {
                     productName = findViewById(R.id.tvProduct);
                     productNameImage = findViewById(R.id.ProductImageView);
                     productCategory = findViewById(R.id.tvCategory);
                     productCategoryImage = findViewById(R.id.CategoryImageView);
 
-                    if (e.category.equals("Food") && e.product.name.equals("Apple"))
+                    if (isTextEntry)
                     {
+                        isTextEntry = false;
                         productName.setVisibility(view.INVISIBLE);
-                        productNameImage.setImageResource(R.drawable.apple);
+                        productNameImage.setImageResource(R.drawable.apple); //Change to image from product image
                         productNameImage.setVisibility(View.VISIBLE);
                         productCategory.setVisibility(view.INVISIBLE);
-                        productCategoryImage.setImageResource(R.drawable.coupe_entree_plate_drk_brn_wht_o_ut);
+                        productCategoryImage.setImageResource(R.drawable.coupe_entree_plate_drk_brn_wht_o_ut); //Change to image from category image
                         productCategoryImage.setVisibility(view.VISIBLE);
+                    }
+                    else
+                    {
+                        isTextEntry = true;
+                        productName.setVisibility(view.VISIBLE);
+                        //productNameImage.setImageResource(R.drawable.apple); //Change to image from product image
+                        productNameImage.setVisibility(View.INVISIBLE);
+                        productCategory.setVisibility(view.VISIBLE);
+                        //productCategoryImage.setImageResource(R.drawable.coupe_entree_plate_drk_brn_wht_o_ut); //Change to image from category image
+                        productCategoryImage.setVisibility(view.INVISIBLE);
                     }
                 }
             }
         });
-        CalculateCosts(productList);
+        CalculateCosts(data.productList);
     }
 
     public void FilterList()
     {
         filteredList = new ArrayList<>();
-        for (ProductEntry e : productList)
+        for (ProductEntry e : data.productList)
         {
-            if (e.product.name.equals(productFilterName) || e.category.equals(productFilterName))
+            if (e.product.name.equals(productFilterName) || e.product.category.equals(productFilterName))
             {
                 filteredList.add(e);
             }
@@ -135,7 +142,7 @@ public class ListActivity extends AppCompatActivity implements ProductListAdapte
 
         if (productFilterName.equals(""))
         {
-            adapter.UpdateList(productList);
+            adapter.UpdateList(data.productList);
             isFiltered = false;
         }
         else
@@ -176,6 +183,9 @@ public class ListActivity extends AppCompatActivity implements ProductListAdapte
         switch (item.getItemId())
         {
             case android.R.id.home:
+                Intent resultIntent = new Intent();
+                resultIntent.putExtra("list_object", data);
+                setResult(Activity.RESULT_OK, resultIntent);
                 this.finish();
                 return true;
             case R.id.appBarAddNew:
@@ -187,13 +197,14 @@ public class ListActivity extends AppCompatActivity implements ProductListAdapte
 
     @Override
     public void onProductClick(int position) {
-        Toast.makeText(this,"You clicked on: " + productList.get(position).product.name, Toast.LENGTH_SHORT).show();
+        //Can act as a checkbox enabler/disabler
+        Toast.makeText(this,"You clicked on: " + data.productList.get(position).product.name, Toast.LENGTH_SHORT).show();
     }
 
     @Override
     public void onProductLongClick(int position) {
         // Implement menu to remove the product or edit
-        Toast.makeText(this,"You held on: " + productList.get(position).product.name, Toast.LENGTH_SHORT).show();
+        Toast.makeText(this,"You held on: " + data.productList.get(position).product.name, Toast.LENGTH_SHORT).show();
     }
 
     @Override
@@ -203,7 +214,7 @@ public class ListActivity extends AppCompatActivity implements ProductListAdapte
 
         if (!isFiltered)
         {
-            e = productList.get(position);
+            e = data.productList.get(position);
         }
         else
         {
@@ -226,12 +237,13 @@ public class ListActivity extends AppCompatActivity implements ProductListAdapte
     @Override
     public void applyProduct(String productName, String productCategory, float productPrice, int productQuantity)
     {
-        Product prod = new Product(productName, productPrice);
-        ProductEntry prodEnt = new ProductEntry(prod, productCategory, productQuantity, false);
-        productList.add(prodEnt);
-        adapter.notifyItemInserted(productList.size() - 1);
+        Product prod = new Product(productName, productCategory, productPrice);
+        //ProductEntry prodEnt = new ProductEntry(prod, productQuantity, false);
+        //data.productList.add(prodEnt);
+        data.AddProduct(prod, productQuantity);
+        adapter.notifyItemInserted(data.productList.size() - 1);
         Toast.makeText(this, "You created a new product: " + productName, Toast.LENGTH_SHORT).show();
-        CalculateCosts(productList);
+        CalculateCosts(data.productList);
     }
 
     public void openAddProductDialogue()

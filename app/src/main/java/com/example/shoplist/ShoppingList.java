@@ -29,6 +29,12 @@ public class ShoppingList implements Parcelable {
     protected ShoppingList(Parcel in) {
         title = in.readString();
         itemCount = in.readInt();
+        if (in.readByte() == 0x01) {
+            productList = new ArrayList<ProductEntry>();
+            in.readList(productList, ProductEntry.class.getClassLoader());
+        } else {
+            productList = null;
+        }
     }
 
     public static final Creator<ShoppingList> CREATOR = new Creator<ShoppingList>() {
@@ -52,10 +58,21 @@ public class ShoppingList implements Parcelable {
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(title);
         dest.writeInt(itemCount);
+        if (productList == null)
+        {
+            dest.writeByte((byte) (0x00));
+        }
+        else
+        {
+            dest.writeByte((byte) (0x01));
+            dest.writeList(productList);
+        }
+
     }
 
-    public void AddProduct(Product product)
+    public void AddProduct(Product product, int quantity)
     {
+        productList.add(new ProductEntry(product, quantity, false));
         itemCount++;
     }
 

@@ -1,5 +1,6 @@
 package com.example.shoplist;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -36,13 +37,18 @@ public class ListsFragment extends Fragment implements NewListDialogue.NewListDi
 
     LinearLayoutManager linearLayoutManager;
     int renameIndex;
+    int activeIndex;
 
     public ListsFragment() {
-        // Required empty public constructor
+
         // Later load data
         shoppingList = new ArrayList<ShoppingList>();
-        shoppingList.add(new ShoppingList("List1"));
-        shoppingList.add(new ShoppingList("Test list"));
+
+        ShoppingList entryList = new ShoppingList("List1");
+        Product p1 = new Product("Apple", "Fruit",3.33f);
+        entryList.AddProduct(p1, 2);
+        shoppingList.add(entryList);
+        //shoppingList.add(new ShoppingList("Test list"));
 
         adapter = new ShoppingListAdapter(shoppingList, this);
     }
@@ -99,14 +105,28 @@ public class ListsFragment extends Fragment implements NewListDialogue.NewListDi
         Toast.makeText(getContext(),"You created a new list: " + listTitle, Toast.LENGTH_SHORT).show();
     }
 
+    //transition to a new activity (where it shows what is in the list)
     @Override
     public void onListClick(int position) {
-        //Implement transition to a new activity (where it shows what is in the list)
+
         Toast.makeText(getContext(),"You clicked on: " + shoppingList.get(position).title, Toast.LENGTH_SHORT).show();
+        activeIndex = position;
 
         Intent intent = new Intent(getContext(), ListActivity.class);
         intent.putExtra("list_object", shoppingList.get(position));
-        startActivity(intent);
+        startActivityForResult(intent, 101);
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        ShoppingList resultList = data.getParcelableExtra("list_object");
+        Toast.makeText(getContext(),"Returned from " + resultList.title, Toast.LENGTH_SHORT).show();
+        if (requestCode == 101 && resultCode == Activity.RESULT_OK)
+        {
+            shoppingList.set(activeIndex, resultList);
+            shoppingList.get(activeIndex).itemCount = resultList.itemCount;
+            adapter.UpdateList(shoppingList);
+        }
     }
 
     @Override

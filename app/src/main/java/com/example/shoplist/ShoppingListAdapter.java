@@ -118,4 +118,11 @@ public class ShoppingListAdapter extends RecyclerView.Adapter<ShoppingListAdapte
     {
         fragManager = manager;
     }
+
+    public void UpdateList(List<ShoppingList> newList)
+    {
+        shoppingList = newList;
+        notifyDataSetChanged();
+
+    }
 }
