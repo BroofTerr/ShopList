@@ -76,14 +76,15 @@ public class ShoppingList implements Parcelable {
         itemCount++;
     }
 
-    public void RemoveProduct(Product product)
+    public void RemoveProduct(int position)
     {
+        productList.remove(position);
         itemCount--;
     }
 
-    public void ChangeQuantity(Product product, int quantity)
+    public void EditProduct(ProductEntry entry, int position)
     {
-
+        productList.set(position, entry);
     }
 
 }

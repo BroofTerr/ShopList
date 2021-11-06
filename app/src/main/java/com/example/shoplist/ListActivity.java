@@ -29,7 +29,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ListActivity extends AppCompatActivity implements ProductListAdapter.OnProductListener,
-        NewProductDialogue.NewProductDialogueListener {
+        NewProductDialogue.NewProductDialogueListener,
+        EditProductDialogue.EditProductDialogueListener {
 
     ShoppingList data;
     //List<ProductEntry> productList;
@@ -53,6 +54,8 @@ public class ListActivity extends AppCompatActivity implements ProductListAdapte
 
     boolean isFiltered;
     boolean isTextEntry;
+
+    int editIndex;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -197,14 +200,16 @@ public class ListActivity extends AppCompatActivity implements ProductListAdapte
 
     @Override
     public void onProductClick(int position) {
-        //Can act as a checkbox enabler/disabler
-        Toast.makeText(this,"You clicked on: " + data.productList.get(position).product.name, Toast.LENGTH_SHORT).show();
+        onCheck(position);
     }
 
     @Override
     public void onProductLongClick(int position) {
         // Implement menu to remove the product or edit
-        Toast.makeText(this,"You held on: " + data.productList.get(position).product.name, Toast.LENGTH_SHORT).show();
+        editIndex = position;
+        //unfiltered
+        EditProductDialogue editProdDial = new EditProductDialogue(data.productList.get(editIndex));
+        editProdDial.show(getSupportFragmentManager(), "editProduct");
     }
 
     @Override
@@ -238,11 +243,29 @@ public class ListActivity extends AppCompatActivity implements ProductListAdapte
     public void applyProduct(String productName, String productCategory, float productPrice, int productQuantity)
     {
         Product prod = new Product(productName, productCategory, productPrice);
-        //ProductEntry prodEnt = new ProductEntry(prod, productQuantity, false);
-        //data.productList.add(prodEnt);
         data.AddProduct(prod, productQuantity);
         adapter.notifyItemInserted(data.productList.size() - 1);
-        Toast.makeText(this, "You created a new product: " + productName, Toast.LENGTH_SHORT).show();
+        CalculateCosts(data.productList);
+    }
+
+    @Override
+    public void editProduct(String productName, String productCategory, float productPrice, int productQuantity)
+    {
+        ProductEntry e = data.productList.get(editIndex);
+        e.product.name = productName;
+        e.product.category = productCategory;
+        e.product.price = productPrice;
+        e.quantity = productQuantity;
+        data.EditProduct(e, editIndex);
+        adapter.notifyItemChanged(editIndex);
+        CalculateCosts(data.productList);
+    }
+
+    @Override
+    public void removeProduct()
+    {
+        data.RemoveProduct(editIndex);
+        adapter.notifyItemRemoved(editIndex);
         CalculateCosts(data.productList);
     }
 

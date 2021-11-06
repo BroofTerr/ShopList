@@ -59,7 +59,9 @@ public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.
         }
 
         @Override
-        public void onClick(View v) {
+        public void onClick(View v)
+        {
+            checkBoxChecked.setChecked(!checkBoxChecked.isChecked());
             onProductListener.onProductClick(getAdapterPosition());
         }
 

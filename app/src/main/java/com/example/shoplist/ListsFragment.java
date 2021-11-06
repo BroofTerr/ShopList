@@ -108,8 +108,6 @@ public class ListsFragment extends Fragment implements NewListDialogue.NewListDi
     //transition to a new activity (where it shows what is in the list)
     @Override
     public void onListClick(int position) {
-
-        Toast.makeText(getContext(),"You clicked on: " + shoppingList.get(position).title, Toast.LENGTH_SHORT).show();
         activeIndex = position;
 
         Intent intent = new Intent(getContext(), ListActivity.class);
@@ -120,7 +118,6 @@ public class ListsFragment extends Fragment implements NewListDialogue.NewListDi
     @Override
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         ShoppingList resultList = data.getParcelableExtra("list_object");
-        Toast.makeText(getContext(),"Returned from " + resultList.title, Toast.LENGTH_SHORT).show();
         if (requestCode == 101 && resultCode == Activity.RESULT_OK)
         {
             shoppingList.set(activeIndex, resultList);
