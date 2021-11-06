@@ -12,6 +12,8 @@ public class ShoppingList implements Parcelable {
     int itemCount;
     List<ProductEntry> productList;
 
+    private float totalCost;
+
     public ShoppingList(String title)
     {
         this.title = title;
@@ -85,6 +87,16 @@ public class ShoppingList implements Parcelable {
     public void EditProduct(ProductEntry entry, int position)
     {
         productList.set(position, entry);
+    }
+
+    public float GetListCost()
+    {
+        totalCost = 0;
+        for (ProductEntry e : productList)
+        {
+            totalCost += e.getCost();
+        }
+        return totalCost;
     }
 
 }

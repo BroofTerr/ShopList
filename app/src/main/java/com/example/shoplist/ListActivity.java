@@ -167,6 +167,11 @@ public class ListActivity extends AppCompatActivity implements ProductListAdapte
         DecimalFormat frmt = new DecimalFormat("#.##");
         tvTotal.setText(frmt.format(total));
         tvChecked.setText(frmt.format(checked));
+
+        if (MainActivity.budgetLimit > 0 && total > MainActivity.budgetLimit)
+        {
+            Toast.makeText(this, "List exceeds budget limit (" + MainActivity.budgetLimit + ")", Toast.LENGTH_SHORT).show();
+        }
     }
 
     @Override
@@ -264,6 +269,7 @@ public class ListActivity extends AppCompatActivity implements ProductListAdapte
     @Override
     public void removeProduct()
     {
+        //unfiltered
         data.RemoveProduct(editIndex);
         adapter.notifyItemRemoved(editIndex);
         CalculateCosts(data.productList);

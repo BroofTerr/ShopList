@@ -41,14 +41,13 @@ public class ListsFragment extends Fragment implements NewListDialogue.NewListDi
 
     public ListsFragment() {
 
-        // Later load data
+        // Later load data (shoppingList = data list)
         shoppingList = new ArrayList<ShoppingList>();
 
         ShoppingList entryList = new ShoppingList("List1");
         Product p1 = new Product("Apple", "Fruit",3.33f);
         entryList.AddProduct(p1, 2);
         shoppingList.add(entryList);
-        //shoppingList.add(new ShoppingList("Test list"));
 
         adapter = new ShoppingListAdapter(shoppingList, this);
     }
@@ -113,6 +112,12 @@ public class ListsFragment extends Fragment implements NewListDialogue.NewListDi
         Intent intent = new Intent(getContext(), ListActivity.class);
         intent.putExtra("list_object", shoppingList.get(position));
         startActivityForResult(intent, 101);
+    }
+
+    @Override
+    public void onListLongClick(int position)
+    {
+        Toast.makeText(getContext(), "Total: " + shoppingList.get(position).GetListCost(), Toast.LENGTH_SHORT).show();
     }
 
     @Override

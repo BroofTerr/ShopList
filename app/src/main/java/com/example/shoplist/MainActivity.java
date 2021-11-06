@@ -25,6 +25,14 @@ public class MainActivity extends AppCompatActivity {
     Fragment _budgetFragment;
     BottomNavigationView _botNavMenu;
 
+    //later load saved budget
+    static float budgetLimit = 1;
+
+    public static void setBudgetLimit(float newLimit)
+    {
+        budgetLimit = newLimit;
+    }
+
     // Swaps between activity fragments
     private void setCurrentFragment(Fragment frag)
     {

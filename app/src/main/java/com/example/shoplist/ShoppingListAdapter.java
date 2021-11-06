@@ -1,5 +1,6 @@
 package com.example.shoplist;
 
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -25,6 +26,8 @@ public class ShoppingListAdapter extends RecyclerView.Adapter<ShoppingListAdapte
     public interface OnListListener{
         void onListClick(int position);
         void onRenameClick(int position);
+
+        void onListLongClick(int position);
     }
 
     public ShoppingListAdapter(List<ShoppingList> shoppingList, OnListListener onListListener)
@@ -34,9 +37,10 @@ public class ShoppingListAdapter extends RecyclerView.Adapter<ShoppingListAdapte
         mOnListListener = onListListener;
     }
 
-    public static class ShoppingListViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+    public static class ShoppingListViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener, View.OnLongClickListener {
 
         View view;
+        int defaultColor;
         TextView textViewList;
         TextView textViewCount;
         Button bttnOptions;
@@ -46,17 +50,26 @@ public class ShoppingListAdapter extends RecyclerView.Adapter<ShoppingListAdapte
         public ShoppingListViewHolder(@NonNull View itemView, OnListListener onListListener) {
             super(itemView);
             view = itemView;
+            defaultColor = Color.parseColor("#FFBB86FC");
             textViewList = view.findViewById(R.id.tvList);
             textViewCount = view.findViewById(R.id.tvListCount);
             bttnOptions = view.findViewById(R.id.bttnOptions);
             this.onListListener = onListListener;
 
             view.setOnClickListener(this);
+            view.setOnLongClickListener(this);
         }
 
         @Override
         public void onClick(View v) {
             onListListener.onListClick(getAdapterPosition());
+        }
+
+        @Override
+        public boolean onLongClick(View v)
+        {
+            onListListener.onListLongClick(getAdapterPosition());
+            return true;
         }
     }
 
@@ -70,6 +83,15 @@ public class ShoppingListAdapter extends RecyclerView.Adapter<ShoppingListAdapte
     @Override
     public void onBindViewHolder(@NonNull ShoppingListViewHolder holder, int position) {
         ShoppingList list = shoppingList.get(position);
+        //Checks if list exceeds budget
+        if (MainActivity.budgetLimit > 0 && list.GetListCost() > MainActivity.budgetLimit)
+        {
+            holder.view.setBackgroundColor(Color.RED);
+        }
+        else
+        {
+            holder.view.setBackgroundColor(holder.defaultColor);
+        }
 
         holder.textViewList.setText(list.title);
         holder.textViewCount.setText(String.valueOf(list.itemCount));
