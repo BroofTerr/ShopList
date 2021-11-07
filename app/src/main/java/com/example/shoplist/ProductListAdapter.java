@@ -2,6 +2,7 @@ package com.example.shoplist;
 
 import android.view.LayoutInflater;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -76,6 +77,24 @@ public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.
     @Override
     public ProductListAdapter.ProductListViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_product, parent, false);
+
+        view.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                switch (event.getAction())
+                {
+                    case MotionEvent.ACTION_DOWN:
+                    {
+                        v.animate().alpha(0.5f).setDuration(200).start();
+                        break;
+                    }
+                    default:
+                        v.animate().alpha(1f).setDuration(200).start();
+                }
+                return false;
+            }
+        });
+
         return new ProductListAdapter.ProductListViewHolder(view, mOnProductListener);
     }
 
