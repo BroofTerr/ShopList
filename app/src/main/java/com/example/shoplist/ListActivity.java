@@ -14,9 +14,14 @@ import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Parcelable;
+import android.transition.Explode;
+import android.transition.Slide;
+import android.transition.TransitionInflater;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -60,6 +65,10 @@ public class ListActivity extends AppCompatActivity implements ProductListAdapte
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().requestFeature(Window.FEATURE_ACTIVITY_TRANSITIONS);
+        getWindow().setEnterTransition(new Slide());
+        getWindow().setExitTransition(new Slide(Gravity.TOP));
+
         setContentView(R.layout.activity_list);
         Toolbar toolbar = findViewById(R.id.toolbarList);
 
@@ -206,7 +215,7 @@ public class ListActivity extends AppCompatActivity implements ProductListAdapte
         Intent resultIntent = new Intent();
         resultIntent.putExtra("list_object", data);
         setResult(Activity.RESULT_OK, resultIntent);
-        this.finish();
+        this.finishAfterTransition();
     }
 
     @Override

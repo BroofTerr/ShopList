@@ -1,6 +1,7 @@
 package com.example.shoplist;
 
 import android.app.Activity;
+import android.app.ActivityOptions;
 import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.Context;
@@ -115,7 +116,7 @@ public class ListsFragment extends Fragment implements NewListDialogue.NewListDi
 
         Intent intent = new Intent(getContext(), ListActivity.class);
         intent.putExtra("list_object", shoppingList.get(position));
-        startActivityForResult(intent, 101);
+        startActivityForResult(intent, 101, ActivityOptions.makeSceneTransitionAnimation(getActivity()).toBundle());
     }
 
     @Override
