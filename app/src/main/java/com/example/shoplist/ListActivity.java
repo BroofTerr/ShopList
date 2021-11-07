@@ -119,20 +119,18 @@ public class ListActivity extends AppCompatActivity implements ProductListAdapte
                     {
                         isTextEntry = false;
                         productName.setVisibility(view.INVISIBLE);
-                        productNameImage.setImageResource(R.drawable.apple); //Change to image from product image
+                        productNameImage.setImageResource(R.drawable.apple); //later Change to image from product image
                         productNameImage.setVisibility(View.VISIBLE);
                         productCategory.setVisibility(view.INVISIBLE);
-                        productCategoryImage.setImageResource(R.drawable.coupe_entree_plate_drk_brn_wht_o_ut); //Change to image from category image
+                        productCategoryImage.setImageResource(R.drawable.coupe_entree_plate_drk_brn_wht_o_ut); //later Change to image from category image
                         productCategoryImage.setVisibility(view.VISIBLE);
                     }
                     else
                     {
                         isTextEntry = true;
                         productName.setVisibility(view.VISIBLE);
-                        //productNameImage.setImageResource(R.drawable.apple); //Change to image from product image
                         productNameImage.setVisibility(View.INVISIBLE);
                         productCategory.setVisibility(view.VISIBLE);
-                        //productCategoryImage.setImageResource(R.drawable.coupe_entree_plate_drk_brn_wht_o_ut); //Change to image from category image
                         productCategoryImage.setVisibility(view.INVISIBLE);
                     }
                 }
