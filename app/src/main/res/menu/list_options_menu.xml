@@ -9,4 +9,8 @@
         android:id="@+id/optionRemove"
         android:title="Remove"/>
 
+    <item
+        android:id="@+id/optionRemind"
+        android:title="Remind"/>
+
 </menu>

@@ -1,5 +1,9 @@
 package com.example.shoplist;
 
+import android.app.AlarmManager;
+import android.app.PendingIntent;
+import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
@@ -9,6 +13,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.PopupMenu;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.FragmentActivity;
@@ -26,7 +31,7 @@ public class ShoppingListAdapter extends RecyclerView.Adapter<ShoppingListAdapte
     public interface OnListListener{
         void onListClick(int position);
         void onRenameClick(int position);
-
+        void onRemindClick(String title);
         void onListLongClick(int position);
     }
 
@@ -113,6 +118,9 @@ public class ShoppingListAdapter extends RecyclerView.Adapter<ShoppingListAdapte
                             case R.id.optionRemove:
                                 removeListEntry(holder.getAdapterPosition());
                                 return true;
+                            case R.id.optionRemind:
+                                mOnListListener.onRemindClick(list.title);
+                                return true;
                             default:
                                 return false;
                         }
@@ -123,6 +131,8 @@ public class ShoppingListAdapter extends RecyclerView.Adapter<ShoppingListAdapte
             }
         });
     }
+
+
 
     @Override
     public int getItemCount() {

@@ -191,16 +191,22 @@ public class ListActivity extends AppCompatActivity implements ProductListAdapte
         switch (item.getItemId())
         {
             case android.R.id.home:
-                Intent resultIntent = new Intent();
-                resultIntent.putExtra("list_object", data);
-                setResult(Activity.RESULT_OK, resultIntent);
-                this.finish();
+                onBackPressed();
                 return true;
             case R.id.appBarAddNew:
                 openAddProductDialogue();
                 return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onBackPressed()
+    {
+        Intent resultIntent = new Intent();
+        resultIntent.putExtra("list_object", data);
+        setResult(Activity.RESULT_OK, resultIntent);
+        this.finish();
     }
 
     @Override

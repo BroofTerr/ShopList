@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
     BottomNavigationView _botNavMenu;
 
     //later load saved budget
-    static float budgetLimit = 1;
+    static float budgetLimit = 0;
 
     public static void setBudgetLimit(float newLimit)
     {
@@ -53,22 +53,12 @@ public class MainActivity extends AppCompatActivity {
 
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O)
         {
-            NotificationChannel channel = new NotificationChannel("My Notification",
-                    "My Notification", NotificationManager.IMPORTANCE_DEFAULT);
+            NotificationChannel channel = new NotificationChannel("reminder",
+                    "reminderChannel", NotificationManager.IMPORTANCE_DEFAULT);
+
             NotificationManager manager = getSystemService(NotificationManager.class);
             manager.createNotificationChannel(channel);
         }
-
-        NotificationCompat.Builder builder = new NotificationCompat.Builder(MainActivity.this,
-                "My Notification")
-                .setContentTitle("Notification!")
-                .setContentText("This is a reminder!")
-                .setSmallIcon(R.drawable.ic_launcher_foreground)
-                .setAutoCancel(true)
-                .setPriority(NotificationCompat.PRIORITY_DEFAULT);
-
-        NotificationManagerCompat notificationManager = NotificationManagerCompat.from(this);
-        notificationManager.notify(1, builder.build());
 
         _botNavMenu = findViewById(R.id.bottomNavigationView);
         _botNavMenu.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {

@@ -1,6 +1,9 @@
 package com.example.shoplist;
 
 import android.app.Activity;
+import android.app.AlarmManager;
+import android.app.PendingIntent;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -29,7 +32,8 @@ import java.util.ListIterator;
 
 public class ListsFragment extends Fragment implements NewListDialogue.NewListDialogueListener,
         ShoppingListAdapter.OnListListener,
-        RenameListDialogue.RenameListDialogueListener {
+        RenameListDialogue.RenameListDialogueListener,
+        TimePickerDialogue.TimePickerDialogueListener {
 
     RecyclerView recyclerView;
     ShoppingListAdapter adapter;
@@ -143,5 +147,30 @@ public class ListsFragment extends Fragment implements NewListDialogue.NewListDi
     public void renameList(String listTitle) {
         shoppingList.get(renameIndex).title = listTitle;
         adapter.notifyItemChanged(renameIndex);
+    }
+
+    @Override
+    public void onRemindClick(String title)
+    {
+        TimePickerDialogue newDialogue = new TimePickerDialogue(title);
+        newDialogue.setTargetFragment(ListsFragment.this, 1);
+        newDialogue.show(getFragmentManager(), "RenameListDialogue");
+    }
+
+    @Override
+    public void onTimePick(int h, int m, int s, String title) {
+        Toast.makeText(getContext(), "Reminder set", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(getContext(), BroadcastReminder.class);
+        intent.setAction(title);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(getContext(), 0, intent, 0);
+
+        AlarmManager alarmManager = (AlarmManager) getContext().getSystemService(Context.ALARM_SERVICE);
+
+        int seconds = (h * 60) + (m * 60) + s;
+
+        long timeAtClick = System.currentTimeMillis();
+        long remindInTime = 1000L * seconds; //convert from time into seconds
+
+        alarmManager.set(AlarmManager.RTC_WAKEUP, timeAtClick + remindInTime, pendingIntent);
     }
 }
