@@ -3,7 +3,6 @@
 
     <item
         android:id="@+id/navLists"
-        android:icon="@drawable/ic_lists"
         android:title="Lists" />
 
     <item

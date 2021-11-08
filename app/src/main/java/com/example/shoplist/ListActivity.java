@@ -75,7 +75,10 @@ public class ListActivity extends AppCompatActivity implements ProductListAdapte
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        data = getIntent().getParcelableExtra("list_object");
+        //data = getIntent().getParcelableExtra("list_object");
+
+        DBHelper dbHelper = new DBHelper(this);
+        data = dbHelper.getAll();
 
         /*if(data.productList != null && data.productList.size() != 0)
         {
@@ -258,12 +261,30 @@ public class ListActivity extends AppCompatActivity implements ProductListAdapte
     }
 
     @Override
+    public void applyProduct(String listTitle, String productName, String productCategory, float productPrice, int productQuantity)
+    {
+        List<ProductEntry> listProd = new ArrayList<>();
+        Product prod = new Product(productName, productCategory, productPrice);
+
+        DBHelper dbHelper = new DBHelper(this);
+        if (listTitle.equals(data.title))
+        {
+            listProd.add(new ProductEntry(prod, productQuantity, false));
+            boolean worked = dbHelper.addToDatabase(new ShoppingList(listTitle, listProd));
+            Toast.makeText(this,"Added new values to database " , Toast.LENGTH_SHORT).show();
+            adapter.notifyItemInserted(data.productList.size() - 1);
+            CalculateCosts(data.productList);
+        }
+    }
+
+    @Override
     public void applyProduct(String productName, String productCategory, float productPrice, int productQuantity)
     {
         Product prod = new Product(productName, productCategory, productPrice);
         data.AddProduct(prod, productQuantity);
         adapter.notifyItemInserted(data.productList.size() - 1);
         CalculateCosts(data.productList);
+
     }
 
     @Override
@@ -282,8 +303,8 @@ public class ListActivity extends AppCompatActivity implements ProductListAdapte
     @Override
     public void removeProduct()
     {
-        //unfiltered
-        data.RemoveProduct(editIndex);
+        DBHelper dbHelper = new DBHelper(this);
+        dbHelper.deleteProductFromDatabase(editIndex);
         adapter.notifyItemRemoved(editIndex);
         CalculateCosts(data.productList);
     }
