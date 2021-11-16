@@ -3,7 +3,7 @@
     <string name="total">Total:</string>
     <string name="checked">Checked:</string>
     <string name="filter">Filter</string>
-    <string name="budgetFragment">Enter your budget</string>
+    <string name="budgetFragment">Enter your budget (Eur.)</string>
     <string name="statsFragment">Stats Fragment</string>
     <string name="product">Product</string>
     <string name="category">Category</string>
