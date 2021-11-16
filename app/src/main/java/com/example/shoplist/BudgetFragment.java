@@ -4,13 +4,19 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.os.Debug;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -27,15 +33,17 @@ import java.util.List;
 public class BudgetFragment extends Fragment {
 
     EditText etBudget;
-    TextView textView1;
     TextView tvConv;
+    Spinner spRates;
+    ArrayAdapter<String> spinnerAdapter;
 
     ArrayList<HashMap<String, Float>> rates = new ArrayList<HashMap<String, Float>>();
-    ArrayList<String> currencies = new ArrayList<>();
+    List<String> currencies = new ArrayList<>();
+    int currencyIndex;
     float conv;
 
     public BudgetFragment() {
-
+        currencyIndex = 0;
     }
 
     private String readJSON() {
@@ -68,7 +76,7 @@ public class BudgetFragment extends Fragment {
 
             String str = "Success:" + success + "\nstamp:" + timestamp + "\nbase:" + base + "\ndate:" + date;
             Iterator<String> iterator = ratesObject.keys();
-            String rateStrings = "";
+            List<String> spinnerValues = new ArrayList<>();
             while (iterator.hasNext())
             {
                 String key = iterator.next();
@@ -76,8 +84,13 @@ public class BudgetFragment extends Fragment {
                 HashMap<String, Float> pair = new HashMap<String, Float>();
                 pair.put(key, value);
                 currencies.add(key);
+
+
+                spinnerValues.add(key + ": " + String.format("%.2f", value));
                 rates.add(pair);
             }
+            spinnerAdapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_item, spinnerValues);
+            spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         }
         catch (JSONException e) {}
     }
@@ -86,7 +99,6 @@ public class BudgetFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
 
     }
 
@@ -97,14 +109,27 @@ public class BudgetFragment extends Fragment {
 
         //reads from the "currencies" JSON file and parses currency/rate pairs
         parseJSON();
+        spRates = fragView.findViewById(R.id.spinnerRates);
+        spRates.setAdapter(spinnerAdapter);
+        spRates.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                currencyIndex = position;
+                conv = MainActivity.budgetLimit * rates.get(position).get(currencies.get(position));
+                tvConv.setText(currencies.get(currencyIndex) + ": " + String.valueOf(conv));
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                currencyIndex = 0;
+            }
+        });
 
         etBudget = fragView.findViewById(R.id.etBudget);
         etBudget.setText(String.valueOf(MainActivity.budgetLimit));
 
-        textView1 = fragView.findViewById(R.id.tvRate);
         tvConv = fragView.findViewById(R.id.tvConverted);
 
-        textView1.setText(currencies.get(0) + ": " + rates.get(0).get(currencies.get(0)).toString());
 
         etBudget.addTextChangedListener(new TextWatcher() {
             @Override
@@ -127,7 +152,8 @@ public class BudgetFragment extends Fragment {
                 {
                     MainActivity.setBudgetLimit(0);
                 }
-                tvConv.setText("AED: " + String.valueOf(conv));
+                conv = MainActivity.budgetLimit * rates.get(currencyIndex).get(currencies.get(currencyIndex));
+                tvConv.setText(currencies.get(currencyIndex) + ": " + String.valueOf(conv));
             }
         });
 
