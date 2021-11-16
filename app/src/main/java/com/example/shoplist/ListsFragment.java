@@ -120,12 +120,6 @@ public class ListsFragment extends Fragment implements NewListDialogue.NewListDi
     }
 
     @Override
-    public void onListLongClick(int position)
-    {
-        Toast.makeText(getContext(), "Total: " + shoppingList.get(position).GetListCost(), Toast.LENGTH_SHORT).show();
-    }
-
-    @Override
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         ShoppingList resultList = data.getParcelableExtra("list_object");
         if (requestCode == 101 && resultCode == Activity.RESULT_OK)
@@ -134,6 +128,12 @@ public class ListsFragment extends Fragment implements NewListDialogue.NewListDi
             shoppingList.get(activeIndex).itemCount = resultList.itemCount;
             adapter.UpdateList(shoppingList);
         }
+    }
+
+    @Override
+    public void onListLongClick(int position)
+    {
+        Toast.makeText(getContext(), "Total: " + shoppingList.get(position).GetListCost(), Toast.LENGTH_SHORT).show();
     }
 
     @Override
