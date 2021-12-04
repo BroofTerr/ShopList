@@ -35,6 +35,8 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptor;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -44,15 +46,31 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 
+class Place
+{
+    String name;
+    String placeLat;
+    String placeLong;
 
-public class StatsFragment extends Fragment {
+    public Place(String n, String pLat, String pLong)
+    {
+        name = n;
+        placeLat = pLat;
+        placeLong = pLong;
+    }
+}
+
+public class MapFragment extends Fragment {
 
     SupportMapFragment mapFragment;
 
@@ -63,11 +81,11 @@ public class StatsFragment extends Fragment {
     List<Place> places = new ArrayList<>();
     String placesURL;
 
-    public StatsFragment() {
+    public MapFragment() {
         // Required empty public constructor
     }
 
-    private String readJSON() {
+    private String readJSONfromFile() {
         String data = null;
         try {
             InputStream stream = getActivity().getAssets().open("places.json");
@@ -80,6 +98,25 @@ public class StatsFragment extends Fragment {
             ex.printStackTrace();
             return null;
         }
+
+        return data;
+    }
+
+    private String readJSONfromURL() {
+        String data = null;
+        try {
+            URL url = new URL(placesURL);
+            BufferedReader reader = new BufferedReader(new InputStreamReader(url.openStream()));
+            String line;
+            while ((line = reader.readLine()) != null) {
+                data += line;
+            }
+            reader.close();
+        } catch (IOException ex) {
+            ex.printStackTrace();
+            return null;
+        }
+
         return data;
     }
 
@@ -88,7 +125,8 @@ public class StatsFragment extends Fragment {
         try
         {
 
-            JSONObject jsonObject = new JSONObject(readJSON());
+            //JSONObject jsonObject = new JSONObject(readJSONfromURL());
+            JSONObject jsonObject = new JSONObject(readJSONfromFile());
 
             JSONArray placesArray = jsonObject.getJSONArray("results");
 
@@ -129,11 +167,9 @@ public class StatsFragment extends Fragment {
         @Override
         public void onMapReady(GoogleMap googleMap) {
             LatLng loc = new LatLng(Double.valueOf(latitude), Double.valueOf(longitude));
-            googleMap.addMarker(new MarkerOptions().position(loc).title("Your location marker"));
+            googleMap.addMarker(new MarkerOptions().position(loc).title("Your location marker").icon(BitmapDescriptorFactory.defaultMarker(100)));
 
             // For nearby locations, need to just loop through them and create markers
-            //LatLng loc2 = new LatLng(Double.valueOf(latitude)-1, Double.valueOf(longitude)-1);
-            //googleMap.addMarker(new MarkerOptions().position(loc2).title("TestMarker"));
             for (Place p : places)
             {
                 LatLng place = new LatLng(Double.valueOf(p.placeLat), Double.valueOf(p.placeLong));
@@ -152,7 +188,6 @@ public class StatsFragment extends Fragment {
 
         View fragView = inflater.inflate(R.layout.fragment_map, container, false);
 
-        parseJSON();
         locClient = LocationServices.getFusedLocationProviderClient(getContext());
 
         getLocation();
@@ -161,7 +196,7 @@ public class StatsFragment extends Fragment {
         return fragView;
     }
 
-   @Override
+    @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         mapFragment = (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.map);
@@ -212,13 +247,16 @@ public class StatsFragment extends Fragment {
     };
 
     private boolean checkPermissions() {
-        return ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED;
+        return ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED &&
+                ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED &&
+                ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.INTERNET) == PackageManager.PERMISSION_GRANTED;
     }
 
     private void requestPermissions() {
         ActivityCompat.requestPermissions(getActivity(), new String[]{
                 Manifest.permission.ACCESS_COARSE_LOCATION,
-                Manifest.permission.ACCESS_FINE_LOCATION}, 1);
+                Manifest.permission.ACCESS_FINE_LOCATION,
+                Manifest.permission.INTERNET}, 1);
     }
 
     private boolean isLocationEnabled() {
@@ -241,9 +279,10 @@ public class StatsFragment extends Fragment {
     public void updateLocation(@NonNull Location location) {
         latitude = String.valueOf(location.getLatitude());
         longitude = String.valueOf(location.getLongitude());
-        //tvStatText.setText("Your latitude: " + latitude + ", longitude: " + longitude);
-        //tvStatText.setText("https://www.google.com/maps/search/?api=1&query="+latitude+", "+longitude);
+
         placesURL = "https://maps.googleapis.com/maps/api/place/textsearch/json?query=Store&location="+latitude+","+longitude+"&radius=200&type=supermarket,bakery&key=AIzaSyBrJ0b1be3rMdkbR0-LzI4RAda6UuPn370";
+
+        parseJSON();
         if (mapFragment != null) {
             mapFragment.getMapAsync(callback);
         }

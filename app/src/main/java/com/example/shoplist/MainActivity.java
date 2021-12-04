@@ -21,11 +21,12 @@ import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity{
 
     Fragment _listsFragment;
     Fragment _statsFragment;
     Fragment _budgetFragment;
+    Fragment _mapFragment;
     BottomNavigationView _botNavMenu;
 
     //later load saved budget
@@ -56,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
         _listsFragment = new ListsFragment();
         _statsFragment = new StatsFragment();
         _budgetFragment = new BudgetFragment();
+        _mapFragment = new MapFragment();
         setCurrentFragment(_listsFragment);
 
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O)
@@ -81,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
                         break;
 
                     case R.id.navStats:
-                        setCurrentFragment(_statsFragment);
+                        setCurrentFragment(_mapFragment);
                         break;
                 }
                 return true;

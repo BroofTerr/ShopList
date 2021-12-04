@@ -1,0 +1,1021 @@
+{
+   "html_attributions" : [],
+   "next_page_token" : "Aap_uEBAHMDCQwuzDhYHjIPIgbfV--Kjej7jv0wyMALQH4ZTgxqxoVRZhMQ-Jt1Wzoa8G8xlZBKUNG3hRXhNGinVlP0vjg_cPj6K6XIgL9ax8M31s5iwApG-Pj9E-l_Fc9iTmC0L-2Zzqjtba7I_30oFgBH1PxBcwgFD3Dau5tK6f_ZvxMe-hsF-WDuHR_z6enixcPH_fh4aXNp_qocfmi5SQ-6xKwDcYaETg7j95_KguaKK37uicQJTJ45_0-AoKYmBAJNyGyfiYrpGDROXzXK21D-3g4MLEsePFvmcf3JdSbuokiFlqA0j-v8RzpgfSWzG5GvIoMyGhyMykTAn_HbKRPlDlwYogMHdqmbtecjMx5MMFPaSXY54nTiI9K3o8UYNsv_5L-dGjI7r1m_-aJIlC-2i9tjAZkeqjm9OpuQBImiNHeyzm-eCZP-MkI0gcecOT6g4ET-YqZptiBCOTgvCd49sWoEkwCtCNU8KcA",
+   "results" : [
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "S. Nėries g. 3, Ežerėlis 53387",
+         "geometry" : {
+            "location" : {
+               "lat" : 54.8830896,
+               "lng" : 23.6006857
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 54.88442202989272,
+                  "lng" : 23.60214542989272
+               },
+               "southwest" : {
+                  "lat" : 54.88172237010728,
+                  "lng" : 23.59944577010728
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/shopping-71.png",
+         "icon_background_color" : "#4B96F3",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/shoppingcart_pinlet",
+         "name" : "Parduotuvė Paštelis",
+         "place_id" : "ChIJwW0-Y3ff5kYRhiPqdwNEarU",
+         "plus_code" : {
+            "compound_code" : "VJM2+67 Ežerėlis",
+            "global_code" : "9G65VJM2+67"
+         },
+         "rating" : 5,
+         "reference" : "ChIJwW0-Y3ff5kYRhiPqdwNEarU",
+         "types" : [
+            "grocery_or_supermarket",
+            "food",
+            "point_of_interest",
+            "store",
+            "establishment"
+         ],
+         "user_ratings_total" : 1
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Laisvės al. 53, Kaunas 44309",
+         "geometry" : {
+            "location" : {
+               "lat" : 54.897097,
+               "lng" : 23.914259
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 54.89898637989273,
+                  "lng" : 23.91530572989273
+               },
+               "southwest" : {
+                  "lat" : 54.89628672010728,
+                  "lng" : 23.91260607010728
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/shopping-71.png",
+         "icon_background_color" : "#4B96F3",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/shoppingcart_pinlet",
+         "name" : "Iki Express",
+         "opening_hours" : {
+            "open_now" : true
+         },
+         "photos" : [
+            {
+               "height" : 3096,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/112681188307687785397\"\u003eŽivilė T\u003c/a\u003e"
+               ],
+               "photo_reference" : "Aap_uEAU5vLsDQF_y2qlZqBR_34kwrT4mGZL-ZeOKHz0PZADFOEe9OZDJ4hfQup7f78ZjpCyEyrmK6syv9f254L_cHMMtP5NO-oYxaZ_v1jAEyM_nLG50ZxcUytfjQZwov6Eqw_o8Lsz0AYyYSvu_e3GHXJ328ukUm3knOmXYH_Irw6krmWi",
+               "width" : 4128
+            }
+         ],
+         "place_id" : "ChIJjwfPxMYj50YRiJ43FmsHX7U",
+         "plus_code" : {
+            "compound_code" : "VWW7+RP Kaunas",
+            "global_code" : "9G65VWW7+RP"
+         },
+         "rating" : 3.9,
+         "reference" : "ChIJjwfPxMYj50YRiJ43FmsHX7U",
+         "types" : [
+            "grocery_or_supermarket",
+            "food",
+            "point_of_interest",
+            "store",
+            "establishment"
+         ],
+         "user_ratings_total" : 442
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Muziejaus g., Dievogala 53429",
+         "geometry" : {
+            "location" : {
+               "lat" : 54.9213452,
+               "lng" : 23.6549598
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 54.92277467989271,
+                  "lng" : 23.65609077989272
+               },
+               "southwest" : {
+                  "lat" : 54.92007502010727,
+                  "lng" : 23.65339112010728
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/shopping-71.png",
+         "icon_background_color" : "#4B96F3",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/shoppingcart_pinlet",
+         "name" : "Plius Food Market",
+         "opening_hours" : {
+            "open_now" : true
+         },
+         "photos" : [
+            {
+               "height" : 4128,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/107470917276742230460\"\u003eJulius Pastukas\u003c/a\u003e"
+               ],
+               "photo_reference" : "Aap_uEBXXleosEUyBNsd-Z4TBixj7z23hpIHHCdoh0WpdFarzGzd1OLf9_Iv2BKRwIIh89B6r_-HZ7mBZXDYuQPd-dBUZbH7QdtdjR9nf4rBkpFWCkit0O0FPKZz6vHiP7LgQ-HqSpC3WZf33ASvPZUvE88dwfkcJ5xLvYieykf9sRz0rQS_",
+               "width" : 3104
+            }
+         ],
+         "place_id" : "ChIJS9xXZ9rf5kYRJVlsI7Djaaw",
+         "plus_code" : {
+            "compound_code" : "WMC3+GX Dievogala",
+            "global_code" : "9G65WMC3+GX"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJS9xXZ9rf5kYRJVlsI7Djaaw",
+         "types" : [
+            "supermarket",
+            "grocery_or_supermarket",
+            "food",
+            "point_of_interest",
+            "store",
+            "establishment"
+         ],
+         "user_ratings_total" : 132
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Laisvės al. 90, Kaunas 44251",
+         "geometry" : {
+            "location" : {
+               "lat" : 54.8977702,
+               "lng" : 23.9072789
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 54.89895097989271,
+                  "lng" : 23.91086689999999
+               },
+               "southwest" : {
+                  "lat" : 54.89625132010727,
+                  "lng" : 23.90602090000001
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/shopping-71.png",
+         "icon_background_color" : "#4B96F3",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/shoppingcart_pinlet",
+         "name" : "IKI EXPRESS - LAISVĖ",
+         "opening_hours" : {
+            "open_now" : true
+         },
+         "photos" : [
+            {
+               "height" : 4032,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/110719585931000957117\"\u003eShir Elmakaies\u003c/a\u003e"
+               ],
+               "photo_reference" : "Aap_uEC7UWsaazUcThxq8qNF-v48dgtZuq4pB_UZhBZbKEE8s_38Jyn5Ot7-f9gpqchGweE-Gcqhi79RvtTLhYYoTZ07vTrzynkgS6NCYO28mEIwM5LBpt1RNqEMpqLdB0d7LSUYaoVWDoo9vRbNJuYZVpN_As7qVftcXC4osXv5hLHOg4SL",
+               "width" : 2268
+            }
+         ],
+         "place_id" : "ChIJe2UsUQsi50YRrUn-AbZEpnY",
+         "plus_code" : {
+            "compound_code" : "VWX4+4W Kaunas",
+            "global_code" : "9G65VWX4+4W"
+         },
+         "rating" : 4.1,
+         "reference" : "ChIJe2UsUQsi50YRrUn-AbZEpnY",
+         "types" : [
+            "grocery_or_supermarket",
+            "food",
+            "point_of_interest",
+            "store",
+            "establishment"
+         ],
+         "user_ratings_total" : 316
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Margirio g. 2a, Ringaudai 53335",
+         "geometry" : {
+            "location" : {
+               "lat" : 54.8898806,
+               "lng" : 23.8061355
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 54.89127212989272,
+                  "lng" : 23.80769357989272
+               },
+               "southwest" : {
+                  "lat" : 54.88857247010728,
+                  "lng" : 23.80499392010728
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/shopping-71.png",
+         "icon_background_color" : "#4B96F3",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/shoppingcart_pinlet",
+         "name" : "IKI - RINGAUDAI",
+         "opening_hours" : {
+            "open_now" : true
+         },
+         "photos" : [
+            {
+               "height" : 3464,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/112410086654364969501\"\u003eMantas Mika\u003c/a\u003e"
+               ],
+               "photo_reference" : "Aap_uEBBQvQWwOQNXs1-udxCbbr9JhLKDYPbeFxGyCp0lhNbfG-RM1HKIvEJeNuf98sDMeYoZ2egZaGaT8yOR5lN1RTkQVao2Ki2md3XP_kC7-AW3K9_Evs0moDxIJXxApgvG2ToI5o-vyhQLmTx1yjXgfASwOzlZmNP2Nok_0nLB151BAEA",
+               "width" : 4618
+            }
+         ],
+         "place_id" : "ChIJZTNuDngh50YR6mQpNSMn6XM",
+         "plus_code" : {
+            "compound_code" : "VRQ4+XF Ringaudai",
+            "global_code" : "9G65VRQ4+XF"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJZTNuDngh50YR6mQpNSMn6XM",
+         "types" : [
+            "grocery_or_supermarket",
+            "food",
+            "point_of_interest",
+            "store",
+            "establishment"
+         ],
+         "user_ratings_total" : 92
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Laisvės al. 82, Kaunas 44250",
+         "geometry" : {
+            "location" : {
+               "lat" : 54.89775239999999,
+               "lng" : 23.9093736
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 54.89910222989273,
+                  "lng" : 23.91072342989272
+               },
+               "southwest" : {
+                  "lat" : 54.89640257010728,
+                  "lng" : 23.90802377010728
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/shopping-71.png",
+         "icon_background_color" : "#4B96F3",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/shoppingcart_pinlet",
+         "name" : "Rimi Laisvė",
+         "opening_hours" : {
+            "open_now" : true
+         },
+         "photos" : [
+            {
+               "height" : 3024,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/108111092535534755859\"\u003eA Google User\u003c/a\u003e"
+               ],
+               "photo_reference" : "Aap_uEAQMM4Ya7oxIgoslM5ZSOPzRsZGoBAzilOPWwk0_xzQzfFQodwjCgmczZLsPZQQRrCNbjM2WWc7UY7kWq79cvW8beSxq85Vo5hRDGzpemESlK4mmKpP2TvO6G1Cu8v6dhh_Y2z4XYXrm3bY5O4_He0PN8ri8rZfTigHu4yM0wXugVDn",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJcbQEqt8j50YRnpJX26IuMk4",
+         "plus_code" : {
+            "compound_code" : "VWX5+4P Kaunas",
+            "global_code" : "9G65VWX5+4P"
+         },
+         "rating" : 4.2,
+         "reference" : "ChIJcbQEqt8j50YRnpJX26IuMk4",
+         "types" : [
+            "grocery_or_supermarket",
+            "food",
+            "point_of_interest",
+            "store",
+            "establishment"
+         ],
+         "user_ratings_total" : 86
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jonavos g. 3, Kaunas 44269",
+         "geometry" : {
+            "location" : {
+               "lat" : 54.9009571,
+               "lng" : 23.8917835
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 54.90248187989272,
+                  "lng" : 23.89294492989272
+               },
+               "southwest" : {
+                  "lat" : 54.89978222010728,
+                  "lng" : 23.89024527010728
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/shopping-71.png",
+         "icon_background_color" : "#4B96F3",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/shoppingcart_pinlet",
+         "name" : "IKI - LITUANICA",
+         "opening_hours" : {
+            "open_now" : true
+         },
+         "photos" : [
+            {
+               "height" : 3024,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/115772901446326881677\"\u003eSaulius Strazdas\u003c/a\u003e"
+               ],
+               "photo_reference" : "Aap_uEBpJx0I4n3bf9gnJv37njcRHkhNjRXTafeciLkqHOa8g0Ss8JI770afgDuxyvqxDr8aRqDyNh-PVSzKBFEJrDHc-cHVQq9LlWy3YkNf1LDBDRlRq7x-Rm6Gic_pCuE8B9u5UyBsuhNvmQ8n7kEkgC5gbQh8-1jmIeD23AIHVHFWySAr",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJOTZ9qwgi50YRwk0bm-rd9LA",
+         "plus_code" : {
+            "compound_code" : "WV2R+9P Kaunas",
+            "global_code" : "9G65WV2R+9P"
+         },
+         "rating" : 3.9,
+         "reference" : "ChIJOTZ9qwgi50YRwk0bm-rd9LA",
+         "types" : [
+            "grocery_or_supermarket",
+            "food",
+            "point_of_interest",
+            "store",
+            "establishment"
+         ],
+         "user_ratings_total" : 1759
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Baltų pr. 195, Kaunas 47118",
+         "geometry" : {
+            "location" : {
+               "lat" : 54.9162022,
+               "lng" : 23.863808
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 54.91758042989272,
+                  "lng" : 23.86496537989272
+               },
+               "southwest" : {
+                  "lat" : 54.91488077010728,
+                  "lng" : 23.86226572010728
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/shopping-71.png",
+         "icon_background_color" : "#4B96F3",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/shoppingcart_pinlet",
+         "name" : "Norfa XL",
+         "opening_hours" : {
+            "open_now" : true
+         },
+         "photos" : [
+            {
+               "height" : 3024,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/114632711787422459990\"\u003eEgidijus Grinevicius\u003c/a\u003e"
+               ],
+               "photo_reference" : "Aap_uEBNK8erSkh_N_ZT-AOlADfQ6Kj-KALMVRfUoG1roXT3Txy_h9Nu2AoXbidzLp0VXbNGl7cfq2BclkybMcY4d03ioWVF68KH6zvLZmM5E9AiTrUEKmplry4nT5xHDvYafHt03UnPGHLuyT4vXNWg8MoMQ7opfQUOQ_IvMxCHpE0lD1ky",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJKyC9xlkf50YRhzEbNBesttA",
+         "plus_code" : {
+            "compound_code" : "WV87+FG Kaunas",
+            "global_code" : "9G65WV87+FG"
+         },
+         "rating" : 4.1,
+         "reference" : "ChIJKyC9xlkf50YRhzEbNBesttA",
+         "types" : [
+            "supermarket",
+            "grocery_or_supermarket",
+            "food",
+            "point_of_interest",
+            "store",
+            "establishment"
+         ],
+         "user_ratings_total" : 1308
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Islandijos pl. 32, Kaunas 44001",
+         "geometry" : {
+            "location" : {
+               "lat" : 54.9403049,
+               "lng" : 23.8891989
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 54.94189752989272,
+                  "lng" : 23.89061302989272
+               },
+               "southwest" : {
+                  "lat" : 54.93919787010727,
+                  "lng" : 23.88791337010728
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/shopping-71.png",
+         "icon_background_color" : "#4B96F3",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/shoppingcart_pinlet",
+         "name" : "Rimi",
+         "opening_hours" : {
+            "open_now" : true
+         },
+         "photos" : [
+            {
+               "height" : 1080,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/114711870906970186246\"\u003ekruvik\u003c/a\u003e"
+               ],
+               "photo_reference" : "Aap_uEAKEXJXALYEB4eYEmpNDzuf3g-4L2byMJjkWJ-yMHGYUJbowS_1-nwI2oGKn9xGGoVD5szWkgl5CoxMU6Lwxd_qKVS1RPo87qfYdYhCo-Ka6HFQFHRoWxRmhOQfnUWsbMcvKntDvEiopHd30D93c_WxOgRPmEHZvSoi_7P40vvUVraP",
+               "width" : 1920
+            }
+         ],
+         "place_id" : "ChIJQ9WaljEf50YREqqyCOBFkjc",
+         "plus_code" : {
+            "compound_code" : "WVRQ+4M Kaunas",
+            "global_code" : "9G65WVRQ+4M"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJQ9WaljEf50YREqqyCOBFkjc",
+         "types" : [
+            "grocery_or_supermarket",
+            "food",
+            "point_of_interest",
+            "store",
+            "establishment"
+         ],
+         "user_ratings_total" : 2792
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Gėlių g. 2, Ringaudai 53335",
+         "geometry" : {
+            "location" : {
+               "lat" : 54.8900721,
+               "lng" : 23.8040462
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 54.89151202989272,
+                  "lng" : 23.80556082989272
+               },
+               "southwest" : {
+                  "lat" : 54.88881237010728,
+                  "lng" : 23.80286117010728
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/shopping-71.png",
+         "icon_background_color" : "#4B96F3",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/shoppingcart_pinlet",
+         "name" : "Maxima",
+         "opening_hours" : {
+            "open_now" : true
+         },
+         "photos" : [
+            {
+               "height" : 3264,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/107126773309846793553\"\u003eМобильный Олимп\u003c/a\u003e"
+               ],
+               "photo_reference" : "Aap_uEDvj2WJnhUw09aYvByqOw52U3xzi_CwDBAn5H0cj580bWYD4J9TyHmv_b1mpjLXRwLP_L2b9oZgOdnS6hgd9gurKwKXPWFuqwdypbW-0ybJberlzMwky30ePIv4XtiyFyzKCdSQwkPhbUqqUbUc8KFG-RaoY6PVPPs6h7HmGzMdC-4B",
+               "width" : 2448
+            }
+         ],
+         "place_id" : "ChIJk2ujyboh50YRUOvKGPsig28",
+         "plus_code" : {
+            "compound_code" : "VRR3+2J Ringaudai",
+            "global_code" : "9G65VRR3+2J"
+         },
+         "rating" : 4,
+         "reference" : "ChIJk2ujyboh50YRUOvKGPsig28",
+         "types" : [
+            "grocery_or_supermarket",
+            "food",
+            "point_of_interest",
+            "store",
+            "establishment"
+         ],
+         "user_ratings_total" : 829
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "J. Naujalio g. 20b, Raudondvaris 54138",
+         "geometry" : {
+            "location" : {
+               "lat" : 54.94080779999999,
+               "lng" : 23.7735471
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 54.94199022989272,
+                  "lng" : 23.77464907989272
+               },
+               "southwest" : {
+                  "lat" : 54.93929057010727,
+                  "lng" : 23.77194942010728
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/shopping-71.png",
+         "icon_background_color" : "#4B96F3",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/shoppingcart_pinlet",
+         "name" : "Iki",
+         "opening_hours" : {
+            "open_now" : true
+         },
+         "photos" : [
+            {
+               "height" : 1152,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/117134950408586935596\"\u003eMarius Menkis\u003c/a\u003e"
+               ],
+               "photo_reference" : "Aap_uEASjrbn4bpqTQuwC0ZBPtriFWjcJV20i1XMxdO-kVp385-mR5BV-BGMVuGo4ovKl0MNCZ-LDD4vWwRldeEsey59lOHmZV2nQo79UNej_bpnmXUgBl0UOZSHKsXvF_pGwCGclwGc21CXV0bxWy8ymozCExy_4lqbhrKtOn1yhpedZc-h",
+               "width" : 2048
+            }
+         ],
+         "place_id" : "ChIJURuqol4f50YRPStLaLLb1yM",
+         "plus_code" : {
+            "compound_code" : "WQRF+8C Raudondvaris",
+            "global_code" : "9G65WQRF+8C"
+         },
+         "rating" : 4.1,
+         "reference" : "ChIJURuqol4f50YRPStLaLLb1yM",
+         "types" : [
+            "grocery_or_supermarket",
+            "food",
+            "point_of_interest",
+            "store",
+            "establishment"
+         ],
+         "user_ratings_total" : 497
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Baltijos g. 36, Kaunas 48250",
+         "geometry" : {
+            "location" : {
+               "lat" : 54.92407679999999,
+               "lng" : 23.8838753
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 54.92535392989272,
+                  "lng" : 23.88530707989272
+               },
+               "southwest" : {
+                  "lat" : 54.92265427010727,
+                  "lng" : 23.88260742010728
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/shopping-71.png",
+         "icon_background_color" : "#4B96F3",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/shoppingcart_pinlet",
+         "name" : "BM",
+         "place_id" : "ChIJx4JQH0wf50YRtMZ84xOWbUo",
+         "plus_code" : {
+            "compound_code" : "WVFM+JH Kaunas",
+            "global_code" : "9G65WVFM+JH"
+         },
+         "price_level" : 1,
+         "rating" : 4.3,
+         "reference" : "ChIJx4JQH0wf50YRtMZ84xOWbUo",
+         "types" : [
+            "grocery_or_supermarket",
+            "supermarket",
+            "food",
+            "point_of_interest",
+            "store",
+            "establishment"
+         ],
+         "user_ratings_total" : 3
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Karaliaus Mindaugo pr. 49, Kaunas 44333",
+         "geometry" : {
+            "location" : {
+               "lat" : 54.8928203,
+               "lng" : 23.91723
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 54.89417012989272,
+                  "lng" : 23.91857982989273
+               },
+               "southwest" : {
+                  "lat" : 54.89147047010728,
+                  "lng" : 23.91588017010728
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/shopping-71.png",
+         "icon_background_color" : "#4B96F3",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/shoppingcart_pinlet",
+         "name" : "Maxima",
+         "opening_hours" : {
+            "open_now" : true
+         },
+         "photos" : [
+            {
+               "height" : 3968,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/105987682105991857878\"\u003eAurimas Račickas\u003c/a\u003e"
+               ],
+               "photo_reference" : "Aap_uEBemn1tDqRDenN32fvoG_20ai63D1di6jOV0N-yCFnPjS3cypXt5-zcPx9US5OUVIvTxoQ8HFbwU_-biRfNBIyJj2xtoZxjkfTXpTOlb7urOT6YO3--JqIe-GuVomg0u-3MeA6TAuXgCI1pAcfNcnebaLWObv4Kuoy3B_qDqzSamy8m",
+               "width" : 2976
+            }
+         ],
+         "place_id" : "ChIJJ8bObXAi50YRYWss2mXLqOs",
+         "plus_code" : {
+            "compound_code" : "VWV8+4V Kaunas",
+            "global_code" : "9G65VWV8+4V"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJJ8bObXAi50YRYWss2mXLqOs",
+         "types" : [
+            "supermarket",
+            "grocery_or_supermarket",
+            "food",
+            "point_of_interest",
+            "store",
+            "establishment"
+         ],
+         "user_ratings_total" : 3831
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Savanorių pr. 149, Kaunas 50174",
+         "geometry" : {
+            "location" : {
+               "lat" : 54.9064129,
+               "lng" : 23.9216378
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 54.90765422989272,
+                  "lng" : 23.92311117989272
+               },
+               "southwest" : {
+                  "lat" : 54.90495457010727,
+                  "lng" : 23.92041152010728
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/shopping-71.png",
+         "icon_background_color" : "#4B96F3",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/shoppingcart_pinlet",
+         "name" : "Masinis.lt - Kaunas",
+         "opening_hours" : {
+            "open_now" : false
+         },
+         "place_id" : "ChIJ-1QoLJkY50YRQb0MmaHPJKc",
+         "plus_code" : {
+            "compound_code" : "WW4C+HM Kaunas",
+            "global_code" : "9G65WW4C+HM"
+         },
+         "rating" : 3,
+         "reference" : "ChIJ-1QoLJkY50YRQb0MmaHPJKc",
+         "types" : [
+            "supermarket",
+            "grocery_or_supermarket",
+            "food",
+            "point_of_interest",
+            "store",
+            "establishment"
+         ],
+         "user_ratings_total" : 1
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Pilėnų g. 1, Akademija 53347",
+         "geometry" : {
+            "location" : {
+               "lat" : 54.895945,
+               "lng" : 23.8233459
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 54.89735962989271,
+                  "lng" : 23.82492032989272
+               },
+               "southwest" : {
+                  "lat" : 54.89465997010727,
+                  "lng" : 23.82222067010728
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/shopping-71.png",
+         "icon_background_color" : "#4B96F3",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/shoppingcart_pinlet",
+         "name" : "Express Market, prekybos centras",
+         "opening_hours" : {
+            "open_now" : true
+         },
+         "photos" : [
+            {
+               "height" : 1836,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/102646587442736989031\"\u003eVytis Nakutis\u003c/a\u003e"
+               ],
+               "photo_reference" : "Aap_uEAJTYJzs81xkL26FdRXSRgGic5l25TaNgO28AwQZQqm2-Jl1RQoFYTxN1nqBZmEzZ1J_cAHm0EWF_zYaet1VH2ZdUSaZCUn5KnzkUWGFrNEu2xTOiiPhS_CVfLeijgPFNtXoyDmuaSEWTikJk9uweaJ175YsU8Um7zHnqqxOhuA1Hk",
+               "width" : 3264
+            }
+         ],
+         "place_id" : "ChIJB6DEkL8h50YRmmDrjzJiM8I",
+         "plus_code" : {
+            "compound_code" : "VRWF+98 Akademija",
+            "global_code" : "9G65VRWF+98"
+         },
+         "rating" : 3.9,
+         "reference" : "ChIJB6DEkL8h50YRmmDrjzJiM8I",
+         "types" : [
+            "supermarket",
+            "grocery_or_supermarket",
+            "food",
+            "point_of_interest",
+            "store",
+            "establishment"
+         ],
+         "user_ratings_total" : 371
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Didžioji g. 28, Vilnius 01128",
+         "geometry" : {
+            "location" : {
+               "lat" : 54.67803960000001,
+               "lng" : 25.2878049
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 54.67937687989272,
+                  "lng" : 25.28903012989272
+               },
+               "southwest" : {
+                  "lat" : 54.67667722010728,
+                  "lng" : 25.28633047010727
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/shopping-71.png",
+         "icon_background_color" : "#4B96F3",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/shoppingcart_pinlet",
+         "name" : "Rimi Supermarket Didžioji",
+         "opening_hours" : {
+            "open_now" : true
+         },
+         "photos" : [
+            {
+               "height" : 2160,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/102193784835483678790\"\u003eShihchuan Lin\u003c/a\u003e"
+               ],
+               "photo_reference" : "Aap_uEA-_C4_Lho04BbUuq3p3obMGyXOfiFho8d9RT98bspzLhc05EkDExXo6Qfp4AUdJNLj1-Yj1_VksY78vmK2xmvMBCsieCgjEdi78v96PjuvJgpHQxF90u8Dvh2B1CgxzIsHXBxr1kngElOvofZicc-rpWkIO3scnAfacV1puoDBmaRu",
+               "width" : 3840
+            }
+         ],
+         "place_id" : "ChIJgVjLZBWU3UYRxOiexyWNers",
+         "plus_code" : {
+            "compound_code" : "M7HQ+64 Vilnius",
+            "global_code" : "9G67M7HQ+64"
+         },
+         "rating" : 4.2,
+         "reference" : "ChIJgVjLZBWU3UYRxOiexyWNers",
+         "types" : [
+            "grocery_or_supermarket",
+            "food",
+            "point_of_interest",
+            "store",
+            "establishment"
+         ],
+         "user_ratings_total" : 755
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Savanorių pr. 315, Kaunas 50122",
+         "geometry" : {
+            "location" : {
+               "lat" : 54.9191266,
+               "lng" : 23.9497353
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 54.92037782989272,
+                  "lng" : 23.95082522989272
+               },
+               "southwest" : {
+                  "lat" : 54.91767817010728,
+                  "lng" : 23.94812557010728
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/shopping-71.png",
+         "icon_background_color" : "#4B96F3",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/shoppingcart_pinlet",
+         "name" : "Lidl",
+         "opening_hours" : {
+            "open_now" : true
+         },
+         "photos" : [
+            {
+               "height" : 3120,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/117682657061625035931\"\u003eArnas Bulaka\u003c/a\u003e"
+               ],
+               "photo_reference" : "Aap_uEBox9sHP_Ble78vcMttGSuKU6uoiw4_gYGAMG0jck6sOxikLxMZAD5wwc4fj_3Y1-St1nuKGy5KYv3r40ahyjBIX0OvjiVeTve7uFsGgm7R8Jmrp3IfRSLonxglaw7BGphlhhJoGZ65YpXLhAV2bmcu9NJ8bWufnFdnoV-wsoJnKCb-",
+               "width" : 4160
+            }
+         ],
+         "place_id" : "ChIJZzEyvvIY50YROy2AlCcecMQ",
+         "plus_code" : {
+            "compound_code" : "WW9X+MV Kaunas",
+            "global_code" : "9G65WW9X+MV"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJZzEyvvIY50YROy2AlCcecMQ",
+         "types" : [
+            "supermarket",
+            "grocery_or_supermarket",
+            "food",
+            "point_of_interest",
+            "store",
+            "establishment"
+         ],
+         "user_ratings_total" : 3746
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Pramonės pr. 25, Kaunas 51286",
+         "geometry" : {
+            "location" : {
+               "lat" : 54.9106295,
+               "lng" : 23.9814937
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 54.91184142989272,
+                  "lng" : 23.98274077989272
+               },
+               "southwest" : {
+                  "lat" : 54.90914177010728,
+                  "lng" : 23.98004112010728
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/shopping-71.png",
+         "icon_background_color" : "#4B96F3",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/shoppingcart_pinlet",
+         "name" : "Thomas Philipps",
+         "opening_hours" : {
+            "open_now" : false
+         },
+         "photos" : [
+            {
+               "height" : 4032,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/101160605802471436513\"\u003eA Google User\u003c/a\u003e"
+               ],
+               "photo_reference" : "Aap_uEBvh7PjXMVQF5bqfUWDWrucnshRdCROPRuRzmE8Sh0I553ttquIYQ6ASkMO_WAiBcWNGuXdsOOFissLT1kj_EM2FINO4fyKFSPe7dU3x9tH8C8xJsSePwlVpSThMj_psZbysaBKxPO0vDEvyiNtaReqAhuHQ5OBB6vdTtG2_I0TKkm2",
+               "width" : 3024
+            }
+         ],
+         "place_id" : "ChIJL6zlSiYZ50YRmE_n7rcR4C0",
+         "plus_code" : {
+            "compound_code" : "WX6J+7H Kaunas",
+            "global_code" : "9G65WX6J+7H"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJL6zlSiYZ50YRmE_n7rcR4C0",
+         "types" : [
+            "supermarket",
+            "grocery_or_supermarket",
+            "food",
+            "point_of_interest",
+            "store",
+            "establishment"
+         ],
+         "user_ratings_total" : 180
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "M. Valančiaus g. 7, Kazlų Rūda 69415",
+         "geometry" : {
+            "location" : {
+               "lat" : 54.7515106,
+               "lng" : 23.4935151
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 54.75304547989271,
+                  "lng" : 23.49473207989272
+               },
+               "southwest" : {
+                  "lat" : 54.75034582010727,
+                  "lng" : 23.49203242010728
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/shopping-71.png",
+         "icon_background_color" : "#4B96F3",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/shoppingcart_pinlet",
+         "name" : "Maxima",
+         "opening_hours" : {
+            "open_now" : true
+         },
+         "photos" : [
+            {
+               "height" : 4128,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/108863051765589954636\"\u003e108863051765589954636\u003c/a\u003e"
+               ],
+               "photo_reference" : "Aap_uEBoT5evkeEKVMXs75_2jwOeyTRllIsbvXK6qJ7nGq5R_7STh5GiER_c5larTEGRW0q-PVNjBRFXzf_YRetbpyYnBute20bpvXwmgNDV7P9WtrdPYfByClzbdLNigg_qFuXlFotCaN1U4Ba5YGm1Er0VXvZ63pofbEprM82aRhPzfwZj",
+               "width" : 3096
+            }
+         ],
+         "place_id" : "ChIJ9QeOFP_W5kYRf5ryV8RHCOo",
+         "plus_code" : {
+            "compound_code" : "QF2V+JC Kazlų Rūda",
+            "global_code" : "9G65QF2V+JC"
+         },
+         "rating" : 3.8,
+         "reference" : "ChIJ9QeOFP_W5kYRf5ryV8RHCOo",
+         "types" : [
+            "grocery_or_supermarket",
+            "food",
+            "point_of_interest",
+            "store",
+            "establishment"
+         ],
+         "user_ratings_total" : 547
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Islandijos pl. 30, Kaunas 49170",
+         "geometry" : {
+            "location" : {
+               "lat" : 54.938652,
+               "lng" : 23.9010696
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 54.94001357989272,
+                  "lng" : 23.90217032989272
+               },
+               "southwest" : {
+                  "lat" : 54.93731392010728,
+                  "lng" : 23.89947067010728
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/shopping-71.png",
+         "icon_background_color" : "#4B96F3",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/shoppingcart_pinlet",
+         "name" : "LIDL",
+         "opening_hours" : {
+            "open_now" : true
+         },
+         "photos" : [
+            {
+               "height" : 4032,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/104771032378561985430\"\u003eparasyk.dabar\u003c/a\u003e"
+               ],
+               "photo_reference" : "Aap_uEAYbBxCRYGgKDkU4WExsucia9-h0O2l5yJXW42Ai8THsudt-OStA4994e8u7muWXoWGiJo29cAFgvCB-4TL3QfeGI0HWi0zXKZNdT3OA_unfuMiCNQX0JiSVTinODTUs9rdvyqDBPeRN5lXezg0rw79vYhdLamA2BcmQW52Br5QP-qy",
+               "width" : 3024
+            }
+         ],
+         "place_id" : "ChIJQxIH0ioZ50YRwuBNurEJJAo",
+         "plus_code" : {
+            "compound_code" : "WWQ2+FC Kaunas",
+            "global_code" : "9G65WWQ2+FC"
+         },
+         "rating" : 4.6,
+         "reference" : "ChIJQxIH0ioZ50YRwuBNurEJJAo",
+         "types" : [
+            "supermarket",
+            "grocery_or_supermarket",
+            "food",
+            "point_of_interest",
+            "store",
+            "establishment"
+         ],
+         "user_ratings_total" : 598
+      }
+   ],
+   "status" : "OK"
+}

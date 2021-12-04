@@ -127,6 +127,7 @@ public class ListsFragment extends Fragment implements NewListDialogue.NewListDi
             shoppingList.set(activeIndex, resultList);
             shoppingList.get(activeIndex).itemCount = resultList.itemCount;
             adapter.UpdateList(shoppingList);
+            // Call the DB Update method
         }
     }
 
