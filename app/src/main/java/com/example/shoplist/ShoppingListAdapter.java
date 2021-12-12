@@ -36,6 +36,7 @@ public class ShoppingListAdapter extends RecyclerView.Adapter<ShoppingListAdapte
         void onRenameClick(int position);
         void onRemindClick(String title);
         void onListLongClick(int position);
+        void onRemove();
     }
 
     public ShoppingListAdapter(List<ShoppingList> shoppingList, OnListListener onListListener)
@@ -165,6 +166,7 @@ public class ShoppingListAdapter extends RecyclerView.Adapter<ShoppingListAdapte
         shoppingList.remove(position);
         //refresh view
         notifyItemRemoved(position);
+        mOnListListener.onRemove();
     }
 
     public void setFragmentManager(FragmentManager manager)

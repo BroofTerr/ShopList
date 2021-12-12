@@ -4,14 +4,14 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 public class Product implements Parcelable {
-    int id;
+    //int id;
     String name;
     String category;
     float price;
 
     public Product()
     {
-        int id = 0;
+        //int id = 0;
         name = "";
         category = "";
         price = 0f;
@@ -25,19 +25,19 @@ public class Product implements Parcelable {
     }
     public Product(int id, String name, String category, float price)
     {
-        this.id = id;
+        //this.id = id;
         this.name = name;
         this.category = category;
         this.price = price;
     }
 
-    public int getId() {
+    /*public int getId() {
         return id;
-    }
+    }*/
 
-    public void setId(int id) {
+    /*public void setId(int id) {
         this.id = id;
-    }
+    }*/
 
     public String getName() {
         return name;

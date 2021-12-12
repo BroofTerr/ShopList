@@ -78,6 +78,12 @@ public class ShoppingList implements Parcelable {
         itemCount++;
     }
 
+    public void AddProduct(Product product, int quantity, boolean isChecked)
+    {
+        productList.add(new ProductEntry(product, quantity, isChecked));
+        itemCount++;
+    }
+
     public void RemoveProduct(int position)
     {
         productList.remove(position);
@@ -97,6 +103,21 @@ public class ShoppingList implements Parcelable {
             totalCost += e.getCost();
         }
         return totalCost;
+    }
+
+    @Override
+    public String toString()
+    {
+        String listData = "";
+
+        listData += title + ";" + itemCount + "\n";
+        for (ProductEntry entry : productList)
+        {
+            Product p = entry.product;
+            listData += p.name + ";" + p.category + ";" + p.price + ";" + entry.quantity + ";" + entry.isChecked + "\n";
+        }
+
+        return listData;
     }
 
 }
