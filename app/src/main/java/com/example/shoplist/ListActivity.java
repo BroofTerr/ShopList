@@ -75,10 +75,10 @@ public class ListActivity extends AppCompatActivity implements ProductListAdapte
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        //data = getIntent().getParcelableExtra("list_object");
+        data = getIntent().getParcelableExtra("list_object");
 
-        DBHelper dbHelper = new DBHelper(this);
-        data = dbHelper.getAll();
+        //DBHelper dbHelper = new DBHelper(this);
+        //data = dbHelper.getAll();
 
         /*if(data.productList != null && data.productList.size() != 0)
         {
@@ -260,7 +260,7 @@ public class ListActivity extends AppCompatActivity implements ProductListAdapte
         tvChecked.setText(frmt.format(checked));
     }
 
-    @Override
+    /*@Override
     public void applyProduct(String listTitle, String productName, String productCategory, float productPrice, int productQuantity)
     {
         List<ProductEntry> listProd = new ArrayList<>();
@@ -275,7 +275,7 @@ public class ListActivity extends AppCompatActivity implements ProductListAdapte
             adapter.notifyItemInserted(data.productList.size() - 1);
             CalculateCosts(data.productList);
         }
-    }
+    }*/
 
     @Override
     public void applyProduct(String productName, String productCategory, float productPrice, int productQuantity)
@@ -303,8 +303,9 @@ public class ListActivity extends AppCompatActivity implements ProductListAdapte
     @Override
     public void removeProduct()
     {
-        DBHelper dbHelper = new DBHelper(this);
-        dbHelper.deleteProductFromDatabase(editIndex);
+        //DBHelper dbHelper = new DBHelper(this);
+        //dbHelper.deleteProductFromDatabase(editIndex);
+        data.RemoveProduct(editIndex);
         adapter.notifyItemRemoved(editIndex);
         CalculateCosts(data.productList);
     }

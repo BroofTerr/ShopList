@@ -130,8 +130,6 @@ public class MapFragment extends Fragment {
 
             JSONArray placesArray = jsonObject.getJSONArray("results");
 
-            //Iterator<String> iterator = ratesObject.keys();
-            //List<String> spinnerValues = new ArrayList<>();
             for (int i = 0; i < placesArray.length(); i++)
             {
                 JSONObject placesObject = placesArray.getJSONObject(i);
@@ -183,6 +181,13 @@ public class MapFragment extends Fragment {
     };
 
     @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        mapFragment = (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.map);
+
+    }
+
+    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
@@ -194,13 +199,6 @@ public class MapFragment extends Fragment {
 
 
         return fragView;
-    }
-
-    @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-        mapFragment = (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.map);
-
     }
 
     @SuppressLint("MissingPermission")

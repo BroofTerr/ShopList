@@ -28,7 +28,7 @@ public class NewProductDialogue extends AppCompatDialogFragment {
     private NewProductDialogueListener listener;
 
     public interface NewProductDialogueListener{
-        void applyProduct(String listTitle, String productName, String productCategory, float productPrice, int productQuantity);
+        //void applyProduct(String listTitle, String productName, String productCategory, float productPrice, int productQuantity);
         void applyProduct(String productName, String productCategory, float productPrice, int productQuantity);
     }
 
@@ -70,7 +70,7 @@ public class NewProductDialogue extends AppCompatDialogFragment {
                         { Toast.makeText(getContext(), "Field is empty or incorrect", Toast.LENGTH_SHORT).show(); }
                         else
                         {
-                            listener.applyProduct(shopList.title, productName, productCategory, productPrice, productQuantity);
+                            listener.applyProduct(productName, productCategory, productPrice, productQuantity);
                         }
                     }
                 });

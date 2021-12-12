@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment;
 
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Build;
 import android.os.Bundle;
 import android.content.Intent;
@@ -20,6 +21,8 @@ import android.view.Window;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity{
 
