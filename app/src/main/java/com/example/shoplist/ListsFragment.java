@@ -65,6 +65,8 @@ public class ListsFragment extends Fragment implements NewListDialogue.NewListDi
     String filename = "shoplistData.txt";
     File dataDir;
 
+    boolean hasRead = false;
+
     public ListsFragment() {
 
         // Later load data (shoppingList = data list)
@@ -110,7 +112,6 @@ public class ListsFragment extends Fragment implements NewListDialogue.NewListDi
         String storageState = Environment.getExternalStorageState();
         if (storageState.equals(Environment.MEDIA_MOUNTED))
         {
-
             try
             {
                 File externalFile = new File(dataDir, filename);
@@ -135,7 +136,6 @@ public class ListsFragment extends Fragment implements NewListDialogue.NewListDi
             {
                 e.printStackTrace();
             }
-
         }
     }
 
@@ -212,13 +212,18 @@ public class ListsFragment extends Fragment implements NewListDialogue.NewListDi
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(true);
 
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        readFromFile();
+        if (!hasRead)
+        {
+            readFromFile();
+            hasRead = true;
+        }
 
         View fragView = inflater.inflate(R.layout.fragment_lists, container, false);
         recyclerView = fragView.findViewById(R.id.recyclerViewShoppingLists);
