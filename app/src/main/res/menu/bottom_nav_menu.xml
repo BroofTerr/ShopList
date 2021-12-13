@@ -16,4 +16,9 @@
         android:icon="@drawable/ic_map"
         android:title="Map" />
 
+    <item
+        android:id="@+id/navPics"
+        android:icon="@drawable/common_full_open_on_phone"
+        android:title="Pictures" />
+
 </menu>

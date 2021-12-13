@@ -8,7 +8,12 @@ import androidx.fragment.app.Fragment;
 
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
+import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.content.Intent;
@@ -24,13 +29,16 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity{
+public class MainActivity extends AppCompatActivity {
 
     Fragment _listsFragment;
     Fragment _statsFragment;
     Fragment _budgetFragment;
     Fragment _mapFragment;
+    Fragment _pictureFragment;
     BottomNavigationView _botNavMenu;
+    SensorManager sensorManager;
+    Sensor senseAccelerometer;
 
     //later load saved budget
     static float budgetLimit = 0;
@@ -61,6 +69,7 @@ public class MainActivity extends AppCompatActivity{
         _statsFragment = new StatsFragment();
         _budgetFragment = new BudgetFragment();
         _mapFragment = new MapFragment();
+        _pictureFragment = new PictureFragment();
         setCurrentFragment(_listsFragment);
 
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O)
@@ -88,10 +97,13 @@ public class MainActivity extends AppCompatActivity{
                     case R.id.navStats:
                         setCurrentFragment(_mapFragment);
                         break;
+
+                    case R.id.navPics:
+                        setCurrentFragment(_pictureFragment);
+                        break;
                 }
                 return true;
             }
         });
     }
-
 }

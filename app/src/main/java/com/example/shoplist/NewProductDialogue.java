@@ -58,8 +58,6 @@ public class NewProductDialogue extends AppCompatDialogFragment {
                 .setPositiveButton("Create", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        DBHelper dataBaseHelper = new DBHelper(getContext());
-                        ShoppingList shopList = dataBaseHelper.getAll();
 
                         productName = editTextProductName.getText().toString();
                         productCategory = editTextProductCategory.getText().toString();
