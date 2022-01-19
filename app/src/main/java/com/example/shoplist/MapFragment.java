@@ -5,6 +5,7 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -37,6 +38,7 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptor;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
+import com.google.android.gms.maps.model.CircleOptions;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -173,6 +175,12 @@ public class MapFragment extends Fragment {
                 LatLng place = new LatLng(Double.valueOf(p.placeLat), Double.valueOf(p.placeLong));
                 googleMap.addMarker(new MarkerOptions().position(place).title(p.name));
             }
+
+            /*CircleOptions co = new CircleOptions()
+                    .center(loc)
+                    .radius(500)
+                    .strokeColor(Color.RED);
+            googleMap.addCircle(co);*/
 
             googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(loc, 12f));
             Toast.makeText(getContext(), "Your latitude: " + latitude + ", longitude: " + longitude, Toast.LENGTH_LONG).show();
